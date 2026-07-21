@@ -13,8 +13,18 @@
   --font-display: var(--font-syne);
 }
 
-html {
-  scroll-behavior: smooth;
+/* lenis smooth-scroll (replaces native scroll-behavior, which would conflict) */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
 }
 
 body {
