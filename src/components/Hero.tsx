@@ -2,7 +2,7 @@ import HeroCanvas from "./HeroCanvas";
 
 export default function Hero() {
   return (
-    <section className="relative h-svh min-h-150 w-full overflow-hidden bg-[#050505] text-white">
+    <section className="sticky top-0 h-svh min-h-150 w-full overflow-hidden bg-[#050505] text-white">
       <HeroCanvas className="absolute inset-0" />
 
       {/* subtle vignette so the type stays readable over the particles */}
