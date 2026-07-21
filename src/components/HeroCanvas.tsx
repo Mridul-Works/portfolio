@@ -218,7 +218,20 @@ export default function HeroCanvas({ className }: { className?: string }) {
     const TRANSITION = 1.8;
     const CYCLE = HOLD + TRANSITION;
 
+    // the hero is sticky, so it never leaves the viewport geometrically —
+    // once the next section's sheet fully covers it, stop rendering and
+    // wake up again on the next scroll event
+    const isCovered = () => window.scrollY > window.innerHeight * 1.15;
+    const resume = () => {
+      if (!raf) raf = requestAnimationFrame(render);
+    };
+
     const render = () => {
+      if (isCovered()) {
+        raf = 0;
+        window.addEventListener("scroll", resume, { once: true, passive: true });
+        return;
+      }
       const elapsed = (performance.now() - startTime) / 1000;
       const time = reducedMotion ? 0 : elapsed;
 
@@ -243,6 +256,7 @@ export default function HeroCanvas({ className }: { className?: string }) {
 
     return () => {
       cancelAnimationFrame(raf);
+      window.removeEventListener("scroll", resume);
       resizeObserver.disconnect();
       window.removeEventListener("pointermove", onPointerMove);
       window.removeEventListener("pointerleave", onPointerLeave);

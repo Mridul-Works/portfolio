@@ -9,7 +9,7 @@ const GRID_LIGHT = [255, 255, 255];
 const GRID_DARK = [20, 60, 30];
 
 const FADE_START = 0.45; // bg flips to white as the color block arrives
-const FADE_END = 0.65;
+const FADE_END = 0.58;
 
 const lerp = (a: number, b: number, t: number) => a + (b - a) * t;
 const lerpColor = (a: number[], b: number[], t: number) =>
@@ -57,7 +57,8 @@ export default function Craft() {
       ctx.strokeStyle = `rgba(${gr},${gg},${gb},0.25)`;
       ctx.lineWidth = 1;
 
-      const spacing = lerp(40, 120, progress);
+      // a slightly coarser grid on small screens keeps text areas calm
+      const spacing = lerp(width < 640 ? 52 : 40, 120, progress);
       const cx = width / 2;
       const cy = height / 2;
       const max = Math.max(width, height);
@@ -125,10 +126,10 @@ export default function Craft() {
     <section
       ref={sectionRef}
       id="craft"
-      className="relative z-10 bg-[#0a5a28]"
+      className="relative z-10 bg-forest"
     >
       <div className="sticky top-0 h-svh w-full overflow-hidden">
-        <canvas ref={canvasRef} className="h-full w-full" />
+        <canvas ref={canvasRef} className="h-full w-full" aria-hidden="true" />
       </div>
 
       <div className="relative z-10 mt-[-100svh]">
@@ -143,7 +144,10 @@ export default function Craft() {
 
             <div className="mt-10 flex flex-col gap-8">
               <Reveal delay={80}>
-                <p className="font-mono text-[10px] tracking-[0.2em] text-white/50">
+                <p
+                  aria-hidden="true"
+                  className="font-mono text-[10px] tracking-[0.2em] text-white/55"
+                >
                   &lt;h1&gt;
                 </p>
                 <p className="mt-1 font-display text-4xl font-bold leading-tight tracking-tight sm:text-6xl">
@@ -151,7 +155,10 @@ export default function Craft() {
                 </p>
               </Reveal>
               <Reveal delay={160}>
-                <p className="font-mono text-[10px] tracking-[0.2em] text-white/50">
+                <p
+                  aria-hidden="true"
+                  className="font-mono text-[10px] tracking-[0.2em] text-white/55"
+                >
                   &lt;h2&gt;
                 </p>
                 <p className="mt-1 font-display text-2xl font-semibold tracking-tight text-white/90 sm:text-4xl">
@@ -159,7 +166,10 @@ export default function Craft() {
                 </p>
               </Reveal>
               <Reveal delay={240}>
-                <p className="font-mono text-[10px] tracking-[0.2em] text-white/50">
+                <p
+                  aria-hidden="true"
+                  className="font-mono text-[10px] tracking-[0.2em] text-white/55"
+                >
                   &lt;h3&gt;
                 </p>
                 <p className="mt-1 text-lg font-medium text-white/85 sm:text-2xl">
@@ -167,7 +177,10 @@ export default function Craft() {
                 </p>
               </Reveal>
               <Reveal delay={320}>
-                <p className="font-mono text-[10px] tracking-[0.2em] text-white/50">
+                <p
+                  aria-hidden="true"
+                  className="font-mono text-[10px] tracking-[0.2em] text-white/55"
+                >
                   &lt;p&gt;
                 </p>
                 <p className="mt-1 max-w-md text-sm leading-relaxed text-white/75 sm:text-base">
@@ -220,9 +233,9 @@ export default function Craft() {
 
             <Reveal delay={200} className="mt-12">
               <div className="flex h-3 overflow-hidden rounded-full border border-zinc-200">
-                <div className="w-[60%] bg-[#f4f4f2]" />
+                <div className="w-[60%] bg-paper" />
                 <div className="w-[30%] bg-zinc-400" />
-                <div className="w-[10%] bg-[#d9ff3d]" />
+                <div className="w-[10%] bg-accent" />
               </div>
               <div className="mt-3 flex justify-between font-mono text-[10px] tracking-[0.15em] text-zinc-500">
                 <span>NEUTRAL / 60</span>

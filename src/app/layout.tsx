@@ -22,6 +22,20 @@ export const metadata: Metadata = {
   title: "Mridul — Creative Web Developer",
   description:
     "Portfolio of Mridul, a creative web developer crafting immersive, interactive experiences with Three.js, WebGL and modern web tech.",
+  openGraph: {
+    title: "Mridul — Creative Web Developer",
+    description:
+      "Immersive, interactive web experiences built with Three.js, WebGL and modern web tech.",
+    type: "website",
+    siteName: "Mridul — Portfolio",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary",
+    title: "Mridul — Creative Web Developer",
+    description:
+      "Immersive, interactive web experiences built with Three.js, WebGL and modern web tech.",
+  },
 };
 
 export default function RootLayout({

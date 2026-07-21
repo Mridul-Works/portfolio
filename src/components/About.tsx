@@ -32,17 +32,17 @@ export default function About() {
   return (
     <section
       id="about"
-      className="relative z-10 rounded-t-[2.5rem] bg-[#f4f4f2] text-zinc-900 sm:rounded-t-[3.5rem]"
+      className="relative z-10 rounded-t-[2.5rem] bg-paper text-zinc-900 sm:rounded-t-[3.5rem]"
     >
       <div className="mx-auto max-w-3xl px-6 py-24 sm:py-36">
         <Reveal>
-          <p className="font-mono text-[11px] tracking-[0.3em] text-zinc-400">
+          <p className="font-mono text-[11px] tracking-[0.3em] text-zinc-500">
             ABOUT — THE STORY
           </p>
           <h2 className="mt-6 font-display text-3xl font-bold leading-tight tracking-tight sm:text-5xl">
             It all started with one question&nbsp;—
             <br />
-            <span className="text-zinc-400">
+            <span className="text-zinc-500">
               &ldquo;how is a website even made?&rdquo;
             </span>
           </h2>
@@ -52,11 +52,11 @@ export default function About() {
           {CHAPTERS.map((chapter, i) => (
             <Reveal key={chapter.n} delay={i * 80}>
               <div className="flex gap-6 border-t border-zinc-200 py-7 sm:gap-10 sm:py-8">
-                <span className="font-mono text-xs text-zinc-400">
+                <span className="font-mono text-xs text-zinc-500">
                   {chapter.n}
                 </span>
                 <div>
-                  <p className="font-mono text-[10px] tracking-[0.25em] text-zinc-400">
+                  <p className="font-mono text-[10px] tracking-[0.25em] text-zinc-500">
                     {chapter.tag}
                   </p>
                   <p className="mt-2 text-lg leading-relaxed text-zinc-700 sm:text-xl">
@@ -73,9 +73,9 @@ export default function About() {
             I&apos;d found my own canvas —
             <br />
             and a creative vision to paint on it
-            <span className="text-[#9db800]">.</span>
+            <span className="text-accent-deep">.</span>
           </p>
-          <p className="mt-8 font-mono text-xs tracking-[0.2em] text-zinc-400">
+          <p className="mt-8 font-mono text-xs tracking-[0.2em] text-zinc-500">
             — MRIDUL
           </p>
         </Reveal>
