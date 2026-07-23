@@ -25,6 +25,9 @@ export default function Hero() {
           >
             FEEDBACK
           </a>
+          <a href="#work" className="transition-colors hover:text-white">
+            WORK
+          </a>
           <a href="#contact" className="transition-colors hover:text-white">
             CONTACT
           </a>

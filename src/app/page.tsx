@@ -5,6 +5,7 @@ import Feedback from "@/components/Feedback";
 import Hero from "@/components/Hero";
 import ModernWeb from "@/components/ModernWeb";
 import StressRelief from "@/components/StressRelief";
+import Work from "@/components/Work";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <ModernWeb />
       <Feedback />
       <StressRelief />
+      <Work />
       <Contact />
     </main>
   );
