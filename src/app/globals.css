@@ -59,8 +59,87 @@ body {
   }
 }
 
+/* --- feedback section: the "client notes" effects --- */
+
+@keyframes fb-jitter {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(-0.5deg);
+  }
+  25% {
+    transform: translate3d(2px, -2px, 0) rotate(0.7deg);
+  }
+  50% {
+    transform: translate3d(-2px, 1px, 0) rotate(-0.9deg);
+  }
+  75% {
+    transform: translate3d(1px, 2px, 0) rotate(0.4deg);
+  }
+}
+
+.fb-jitter {
+  animation: fb-jitter 0.4s steps(2) infinite;
+}
+
+@keyframes fb-blink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0.3;
+  }
+}
+
+.fb-blink {
+  animation: fb-blink 0.6s steps(1) infinite;
+}
+
+@keyframes fb-slide {
+  to {
+    background-position: -200% 0;
+  }
+}
+
+/* "make it pop" — the gradient stays even without motion */
+.fb-pop {
+  background-image: linear-gradient(
+    90deg,
+    #ff004c,
+    #ff8a00,
+    #ffe600,
+    #00e05a,
+    #00b3ff,
+    #8a2be2,
+    #ff004c
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: fb-slide 2.5s linear infinite;
+}
+
+@keyframes fb-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.fb-marquee {
+  animation: fb-marquee 8s linear infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .eye-blink {
+  .eye-blink,
+  .fb-jitter,
+  .fb-blink,
+  .fb-pop,
+  .fb-marquee {
     animation: none;
   }
 }

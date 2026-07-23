@@ -19,6 +19,12 @@ export default function Hero() {
           <a href="#craft" className="transition-colors hover:text-white">
             CRAFT
           </a>
+          <a
+            href="#feedback"
+            className="hidden transition-colors hover:text-white sm:inline"
+          >
+            FEEDBACK
+          </a>
           <a href="#contact" className="transition-colors hover:text-white">
             CONTACT
           </a>
