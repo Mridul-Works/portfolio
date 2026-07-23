@@ -139,7 +139,10 @@ export default function Feedback() {
     : { backgroundColor: "#ffffff" };
 
   return (
-    <section id="feedback" className="relative z-10 bg-paper text-zinc-900">
+    <section
+      id="feedback"
+      className="relative z-10 rounded-t-[2.5rem] bg-paper text-zinc-900 sm:rounded-t-[3.5rem]"
+    >
       <div className="mx-auto max-w-6xl px-6 py-24 sm:py-36">
         <Reveal>
           <p className="font-mono text-[11px] tracking-[0.3em] text-zinc-500">
@@ -342,7 +345,7 @@ export default function Feedback() {
 
             <div
               aria-live="polite"
-              className="mt-4 min-h-[7.5rem] rounded-2xl border border-zinc-200 bg-white px-4 py-3 font-mono text-[11px] leading-relaxed"
+              className="mt-4 min-h-30 rounded-2xl border border-zinc-200 bg-white px-4 py-3 font-mono text-[11px] leading-relaxed"
             >
               {log.length === 0 ? (
                 <p className="text-zinc-400">
