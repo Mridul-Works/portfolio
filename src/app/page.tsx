@@ -4,6 +4,7 @@ import Craft from "@/components/Craft";
 import Feedback from "@/components/Feedback";
 import Hero from "@/components/Hero";
 import ModernWeb from "@/components/ModernWeb";
+import StressRelief from "@/components/StressRelief";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <Craft />
       <ModernWeb />
       <Feedback />
+      <StressRelief />
       <Contact />
     </main>
   );
