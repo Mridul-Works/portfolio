@@ -209,6 +209,109 @@ body {
   }
 }
 
+/* --- about: web-history era artifacts --- */
+
+/* the first tag, typing itself out */
+.era-type {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  vertical-align: bottom;
+  width: 0;
+  animation: era-type 1.8s steps(21, end) 0.4s forwards;
+}
+
+@keyframes era-type {
+  to {
+    width: 21ch;
+  }
+}
+
+/* the rendered result popping in after the refresh */
+.era-appear {
+  opacity: 0;
+  animation: era-appear 0.5s ease 2.4s forwards;
+}
+
+@keyframes era-appear {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- work: live project demos --- */
+
+.demo-cube {
+  animation: demo-spin 9s linear infinite;
+}
+
+@keyframes demo-spin {
+  from {
+    transform: rotateX(-18deg) rotateY(0deg);
+  }
+  to {
+    transform: rotateX(-18deg) rotateY(360deg);
+  }
+}
+
+.demo-float {
+  animation: demo-float 3.4s ease-in-out infinite;
+}
+
+@keyframes demo-float {
+  0%,
+  100% {
+    transform: translateY(-4px) rotate(-6deg);
+  }
+  50% {
+    transform: translateY(5px) rotate(7deg);
+  }
+}
+
+/* article lines streaming in, over and over, very fast, for no reason */
+.demo-stream {
+  transform: scaleX(0);
+  animation: demo-stream 3.2s ease-out infinite;
+}
+
+@keyframes demo-stream {
+  0% {
+    transform: scaleX(0);
+  }
+  18%,
+  78% {
+    transform: scaleX(1);
+  }
+  92%,
+  100% {
+    transform: scaleX(0);
+  }
+}
+
+/* lighthouse ring refilling to 100 */
+.demo-ring {
+  stroke-dashoffset: 151;
+  animation: demo-ring 4s ease-in-out infinite;
+}
+
+@keyframes demo-ring {
+  0% {
+    stroke-dashoffset: 151;
+  }
+  40%,
+  85% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 151;
+  }
+}
+
 .orbit-spin {
   animation: orbit-spin 16s linear infinite;
 }
@@ -260,5 +363,30 @@ body {
     animation: none;
     opacity: 0.65;
     transform: scale(0.75);
+  }
+
+  .era-type {
+    animation: none;
+    width: auto;
+  }
+
+  .era-appear {
+    animation: none;
+    opacity: 1;
+  }
+
+  .demo-cube,
+  .demo-float {
+    animation: none;
+  }
+
+  .demo-stream {
+    animation: none;
+    transform: scaleX(1);
+  }
+
+  .demo-ring {
+    animation: none;
+    stroke-dashoffset: 0;
   }
 }

@@ -3,6 +3,7 @@ import Contact from "@/components/Contact";
 import Craft from "@/components/Craft";
 import Feedback from "@/components/Feedback";
 import Hero from "@/components/Hero";
+import Hire from "@/components/Hire";
 import ModernWeb from "@/components/ModernWeb";
 import StressRelief from "@/components/StressRelief";
 import Work from "@/components/Work";
@@ -17,6 +18,7 @@ export default function Home() {
       <Feedback />
       <StressRelief />
       <Work />
+      <Hire />
       <Contact />
     </main>
   );

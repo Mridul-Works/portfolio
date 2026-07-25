@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import MotionLab from "./MotionLab";
 import Reveal from "./Reveal";
 
 const DARK_GREEN = [10, 90, 40];
@@ -8,8 +9,8 @@ const PAPER = [255, 255, 255];
 const GRID_LIGHT = [255, 255, 255];
 const GRID_DARK = [20, 60, 30];
 
-const FADE_START = 0.45; // bg flips to white as the color block arrives
-const FADE_END = 0.58;
+const FADE_START = 0.36; // bg flips to white as the color block arrives
+const FADE_END = 0.48;
 
 const lerp = (a: number, b: number, t: number) => a + (b - a) * t;
 const lerpColor = (a: number[], b: number[], t: number) =>
@@ -242,6 +243,33 @@ export default function Craft() {
                 <span>SUPPORT / 30</span>
                 <span>ACCENT / 10</span>
               </div>
+            </Reveal>
+          </div>
+        </div>
+
+        {/* 03 — motion, demonstrated by a race you can lose on purpose */}
+        <div className="flex min-h-svh items-center px-6 py-24 text-zinc-900">
+          <div className="mx-auto w-full max-w-3xl">
+            <Reveal>
+              <p className="font-mono text-[11px] tracking-[0.3em] text-zinc-500">
+                CRAFT — 03 / MOTION
+              </p>
+              <h2 className="mt-6 font-display text-3xl font-bold leading-tight tracking-tight sm:text-5xl">
+                Nothing here snaps.
+                <br />
+                Everything arrives.
+              </h2>
+              <p className="mt-6 max-w-lg text-sm leading-relaxed text-zinc-600 sm:text-base">
+                Motion is a material. Linear is a robot, ease-out is a polite
+                robot — but a spring carries momentum, and momentum is what
+                makes an interface feel alive. Drag the target. Watch who
+                keeps up. Then tune the spring until it feels wrong; that&apos;s
+                how you learn where right is.
+              </p>
+            </Reveal>
+
+            <Reveal delay={120} className="mt-12">
+              <MotionLab />
             </Reveal>
           </div>
         </div>

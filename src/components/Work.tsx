@@ -1,8 +1,8 @@
 "use client";
 
-import Image from "next/image";
 import { useState } from "react";
 import Reveal from "./Reveal";
+import ProjectDemo from "./WorkDemos";
 
 type Project = {
   seed: string;
@@ -183,15 +183,15 @@ export default function Work() {
               {PROJECTS.map((project, i) => (
                 <Reveal key={project.seed} delay={i * 90}>
                   <a href="#" className="group block">
-                    <div className="relative aspect-4/3 overflow-hidden rounded-2xl bg-zinc-100">
-                      <Image
-                        src={`https://picsum.photos/seed/${project.seed}/960/720`}
-                        alt={`${project.title} — project preview`}
-                        fill
-                        sizes="(max-width: 640px) 100vw, 50vw"
-                        className={`object-cover transition-all duration-500 group-hover:scale-[1.04] ${
-                          honest ? "" : "grayscale group-hover:grayscale-0"
-                        }`}
+                    <div
+                      className={`relative aspect-4/3 overflow-hidden rounded-2xl border border-zinc-200 transition-all duration-500 ${
+                        honest ? "" : "grayscale group-hover:grayscale-0"
+                      }`}
+                    >
+                      <ProjectDemo
+                        seed={project.seed}
+                        honest={honest}
+                        title={project.title}
                       />
                     </div>
 

@@ -146,7 +146,7 @@ export default function Feedback() {
       <div className="mx-auto max-w-6xl px-6 py-24 sm:py-36">
         <Reveal>
           <p className="font-mono text-[11px] tracking-[0.3em] text-zinc-500">
-            CRAFT — 03 / THE FEEDBACK ROUND
+            CRAFT — 04 / THE FEEDBACK ROUND
           </p>
           <h2 className="mt-6 font-display text-3xl font-bold leading-tight tracking-tight sm:text-5xl">
             Every design survives
