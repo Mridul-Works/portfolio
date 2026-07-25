@@ -1,6 +1,7 @@
 import Estimator from "./Estimator";
 import Magnetic from "./Magnetic";
 import Reveal from "./Reveal";
+import Stardust from "./Stardust";
 
 /**
  * The close: prices in the open, a slot counter that renders from a real
@@ -96,6 +97,7 @@ export default function Invest() {
       className="relative z-10 -mt-11 overflow-hidden rounded-t-[2.5rem] bg-cobalt-deep text-white sm:-mt-16 sm:rounded-t-[3.5rem]"
     >
       <div className="grain pointer-events-none absolute inset-0" />
+      <Stardust count={14} seed={31} className="text-[#cfd8ea]" />
 
       <div className="relative mx-auto max-w-5xl px-6 py-24 sm:py-36">
         <Reveal>

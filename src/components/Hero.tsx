@@ -2,6 +2,7 @@ import HeroCanvas from "./HeroCanvas";
 import HeroTime from "./HeroTime";
 import Magnetic from "./Magnetic";
 import Sparkle from "./Sparkle";
+import Stardust from "./Stardust";
 
 const NAV = [
   ["FOR YOU", "#manifesto"],
@@ -20,6 +21,7 @@ export default function Hero() {
       {/* edge vignette + film grain */}
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_44%,rgba(10,14,140,0.45)_78%,rgba(4,6,60,0.85)_100%)]" />
       <div className="grain pointer-events-none absolute inset-0" />
+      <Stardust count={10} seed={3} className="text-[#cfd8ea]" />
 
       {/* corner registration marks */}
       <div

@@ -1,4 +1,5 @@
 import Reveal from "./Reveal";
+import Stardust from "./Stardust";
 
 /**
  * The working rhythm, laid out like a shipping schedule. Clients don't
@@ -84,6 +85,7 @@ export default function Method() {
       className="relative z-10 -mt-11 overflow-hidden rounded-t-[2.5rem] bg-cobalt text-white sm:-mt-16 sm:rounded-t-[3.5rem]"
     >
       <div className="grain pointer-events-none absolute inset-0" />
+      <Stardust count={12} seed={23} className="text-[#cfd8ea]" />
 
       <div className="relative mx-auto max-w-4xl px-6 py-24 sm:py-36">
         <Reveal>

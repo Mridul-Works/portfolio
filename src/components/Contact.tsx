@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import Magnetic from "./Magnetic";
 import MarqueeBand from "./MarqueeBand";
 import Sparkle from "./Sparkle";
+import Stardust from "./Stardust";
 
 // same brief as the invest section — clients land here ready to talk,
 // the email arrives pre-filled with the questions that scope a project
@@ -109,6 +110,7 @@ export default function Contact() {
       className="relative z-10 -mt-11 overflow-hidden rounded-t-[2.5rem] bg-cobalt text-white sm:-mt-16 sm:rounded-t-[3.5rem]"
     >
       <div className="grain pointer-events-none absolute inset-0" />
+      <Stardust count={16} seed={47} className="text-[#cfd8ea]" />
 
       <div className="relative pt-14 text-white/90 sm:pt-20">
         <MarqueeBand text="LET'S MAKE SOMETHING UNFORGETTABLE —" />

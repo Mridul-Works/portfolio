@@ -1,6 +1,7 @@
 import CompareSlider from "./CompareSlider";
 import Reveal from "./Reveal";
 import Sparkle from "./Sparkle";
+import Stardust from "./Stardust";
 
 /**
  * The opening argument. Before showing anything, the site names exactly
@@ -57,7 +58,9 @@ export default function Manifesto() {
       id="manifesto"
       className="relative z-10 rounded-t-[2.5rem] bg-paper text-zinc-900 sm:rounded-t-[3.5rem]"
     >
-      <div className="mx-auto max-w-3xl px-6 py-24 sm:py-36">
+      <Stardust count={9} seed={5} className="text-zinc-300" />
+
+      <div className="relative mx-auto max-w-3xl px-6 py-24 sm:py-36">
         <Reveal>
           <p className="font-mono text-[11px] tracking-[0.3em] text-zinc-500">
             FIRST — WHO THIS IS FOR

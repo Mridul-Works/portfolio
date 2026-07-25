@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Reveal from "./Reveal";
+import Stardust from "./Stardust";
 import ProjectDemo from "./WorkDemos";
 
 /**
@@ -86,7 +87,9 @@ export default function Showcase() {
       id="work"
       className="relative z-10 -mt-11 rounded-t-[2.5rem] bg-white text-zinc-900 sm:-mt-16 sm:rounded-t-[3.5rem]"
     >
-      <div className="mx-auto max-w-6xl px-6 py-24 sm:py-36">
+      <Stardust count={9} seed={17} className="text-zinc-300" />
+
+      <div className="relative mx-auto max-w-6xl px-6 py-24 sm:py-36">
         <Reveal>
           <div className="flex flex-wrap items-end justify-between gap-6">
             <div>

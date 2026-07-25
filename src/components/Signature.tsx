@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import MarqueeBand from "./MarqueeBand";
 import Reveal from "./Reveal";
+import Stardust from "./Stardust";
 
 /**
  * Proof you can touch. Four tiles, each demonstrating one ingredient of
@@ -333,6 +334,7 @@ export default function Signature() {
           the sheet corners below reveal the sticky hero's flat cobalt, so
           darkened edges here would create a visible seam at the boundary. */}
       <div className="grain pointer-events-none absolute inset-0" />
+      <Stardust count={16} seed={11} className="text-[#cfd8ea]" />
 
       <div className="relative mx-auto max-w-5xl px-6 py-24 sm:py-36">
         <Reveal>
