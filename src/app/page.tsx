@@ -1,25 +1,23 @@
-import About from "@/components/About";
 import Contact from "@/components/Contact";
-import Craft from "@/components/Craft";
-import Feedback from "@/components/Feedback";
+import FloatingCta from "@/components/FloatingCta";
 import Hero from "@/components/Hero";
-import Hire from "@/components/Hire";
-import ModernWeb from "@/components/ModernWeb";
-import StressRelief from "@/components/StressRelief";
-import Work from "@/components/Work";
+import Invest from "@/components/Invest";
+import Manifesto from "@/components/Manifesto";
+import Method from "@/components/Method";
+import Showcase from "@/components/Showcase";
+import Signature from "@/components/Signature";
 
 export default function Home() {
   return (
     <main>
       <Hero />
-      <About />
-      <Craft />
-      <ModernWeb />
-      <Feedback />
-      <StressRelief />
-      <Work />
-      <Hire />
+      <Manifesto />
+      <Signature />
+      <Showcase />
+      <Method />
+      <Invest />
       <Contact />
+      <FloatingCta />
     </main>
   );
 }

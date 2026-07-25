@@ -1,7 +1,17 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Magnetic from "./Magnetic";
+import MarqueeBand from "./MarqueeBand";
 import Sparkle from "./Sparkle";
+
+// same brief as the invest section — clients land here ready to talk,
+// the email arrives pre-filled with the questions that scope a project
+const MAILTO = `mailto:hello@mridul.dev?subject=${encodeURIComponent(
+  "New project — let's scope it"
+)}&body=${encodeURIComponent(
+  `What I'm building:\n\nWho it's for:\n\nDeadline (if any):\n\nBudget ballpark (rough is fine):\n\nAnything existing (links welcome):\n`
+)}`;
 
 function Eye({
   pupilRef,
@@ -96,12 +106,21 @@ export default function Contact() {
     <section
       ref={sectionRef}
       id="contact"
-      className="relative z-10 overflow-hidden rounded-t-[2.5rem] bg-cobalt text-white sm:rounded-t-[3.5rem]"
+      className="relative z-10 -mt-11 overflow-hidden rounded-t-[2.5rem] bg-cobalt text-white sm:-mt-16 sm:rounded-t-[3.5rem]"
     >
       <div className="grain pointer-events-none absolute inset-0" />
 
+      <div className="relative pt-14 text-white/90 sm:pt-20">
+        <MarqueeBand text="LET'S MAKE SOMETHING UNFORGETTABLE —" />
+      </div>
+
       <div className="relative mx-auto flex min-h-svh max-w-5xl flex-col items-center justify-center px-6 py-24 text-center">
-        <p className="font-mono text-[11px] tracking-[0.3em] text-white/60">
+        <p className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-4 py-2 font-mono text-[10px] tracking-[0.25em] text-white/70">
+          <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-accent" />
+          NOW BOOKING — LIMITED CLIENT SLOTS THIS MONTH
+        </p>
+
+        <p className="mt-6 font-mono text-[11px] tracking-[0.3em] text-white/60">
           GOT AN IDEA? — LET&apos;S BUILD IT
         </p>
 
@@ -128,9 +147,19 @@ export default function Contact() {
           </span>
         </h2>
 
+        <Magnetic strength={0.25} className="mt-12">
+          <a
+            href={MAILTO}
+            className="inline-flex items-center gap-3 rounded-full bg-accent px-8 py-4 font-mono text-xs font-bold tracking-[0.15em] text-ink shadow-[0_10px_30px_-10px_rgba(217,255,61,0.7)] transition-transform duration-300 hover:scale-[1.03]"
+          >
+            START A PROJECT
+            <span aria-hidden="true">→</span>
+          </a>
+        </Magnetic>
+
         <a
           href="mailto:hello@mridul.dev"
-          className="group mt-12 inline-flex items-center gap-3 text-lg text-white/70 transition-colors hover:text-white sm:text-2xl"
+          className="group mt-8 inline-flex items-center gap-3 text-base text-white/70 transition-colors hover:text-white sm:text-xl"
         >
           <span className="border-b border-white/25 pb-1 transition-colors group-hover:border-accent">
             hello@mridul.dev

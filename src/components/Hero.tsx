@@ -4,11 +4,10 @@ import Magnetic from "./Magnetic";
 import Sparkle from "./Sparkle";
 
 const NAV = [
-  ["ABOUT", "#about"],
-  ["CRAFT", "#craft"],
-  ["FEEDBACK", "#feedback"],
+  ["FOR YOU", "#manifesto"],
+  ["SIGNATURE", "#signature"],
   ["WORK", "#work"],
-  ["HIRE", "#hire"],
+  ["METHOD", "#method"],
   ["CONTACT", "#contact"],
 ] as const;
 
@@ -43,7 +42,7 @@ export default function Hero() {
               key={href}
               href={href}
               className={`group transition-colors hover:text-white ${
-                label === "FEEDBACK" || label === "CRAFT"
+                label === "SIGNATURE" || label === "METHOD"
                   ? "hidden sm:inline"
                   : ""
               }`}
@@ -54,6 +53,12 @@ export default function Hero() {
               {label}
             </a>
           ))}
+          <a
+            href="#invest"
+            className="rounded-full bg-accent px-4 py-2 font-bold tracking-[0.15em] text-ink transition-transform hover:scale-[1.04]"
+          >
+            START A PROJECT
+          </a>
         </nav>
       </header>
 
@@ -66,7 +71,7 @@ export default function Hero() {
       {/* caption riding just below the particle word */}
       <div className="pointer-events-none absolute inset-x-0 top-[58%] z-10 text-center">
         <p className="font-mono text-[10px] tracking-[0.42em] text-white/50">
-          CREATIVE DEVELOPER — PORTFOLIO<span className="text-accent">©</span>
+          WEBSITES FOR BRANDS WITH TASTE<span className="text-accent">©</span>
           2026
         </p>
       </div>
@@ -75,14 +80,14 @@ export default function Hero() {
       <div className="absolute inset-x-0 bottom-0 z-10 flex items-end justify-between gap-8 px-6 pb-8 sm:px-10 sm:pb-10">
         <div className="max-w-md">
           <a
-            href="#hire"
+            href="#invest"
             className="group inline-flex items-center gap-2.5 font-mono text-[10px] tracking-[0.25em] text-white/60 transition-colors hover:text-white"
           >
             <span className="relative flex h-2 w-2">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-60 motion-reduce:animate-none" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
             </span>
-            AVAILABLE FOR SELECT WORK
+            NOW BOOKING — 10 CLIENT SLOTS THIS MONTH
             <span className="opacity-0 transition-opacity group-hover:opacity-100">
               →
             </span>
@@ -92,10 +97,10 @@ export default function Hero() {
             <Sparkle className="-left-4 -top-3 h-5 w-5" delay={0.9} />
             <Sparkle className="-right-2 bottom-1 h-4 w-4 sm:-right-6" delay={2.3} />
             <p className="chrome-text font-display text-[clamp(1.35rem,2.6vw,2rem)] font-bold leading-tight tracking-tight">
-              Immersive experiences,
+              Websites people remember —
               <br />
-              engineered with{" "}
-              <span className="font-script text-[1.18em] italic">care</span>
+              built for brands with{" "}
+              <span className="font-script text-[1.18em] italic">taste</span>
               <span className="text-accent">.</span>
             </p>
           </div>

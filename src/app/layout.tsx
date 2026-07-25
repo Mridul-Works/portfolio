@@ -27,22 +27,22 @@ const instrumentSerif = Instrument_Serif({
 });
 
 export const metadata: Metadata = {
-  title: "Mridul — Creative Web Developer",
+  title: "Mridul — Websites for Brands With Taste",
   description:
-    "Portfolio of Mridul, a creative web developer crafting immersive, interactive experiences with Three.js, WebGL and modern web tech.",
+    "I design and build unforgettable websites for creative brands, studios and founders — immersive Three.js/WebGL experiences, sub-second loads, fixed quotes. Now booking limited client slots.",
   openGraph: {
-    title: "Mridul — Creative Web Developer",
+    title: "Mridul — Websites for Brands With Taste",
     description:
-      "Immersive, interactive web experiences built with Three.js, WebGL and modern web tech.",
+      "Unforgettable websites for creative brands — immersive Three.js/WebGL experiences, sub-second loads, fixed quotes. Now booking limited client slots.",
     type: "website",
-    siteName: "Mridul — Portfolio",
+    siteName: "Mridul — Creative Web Developer",
     locale: "en_US",
   },
   twitter: {
     card: "summary",
-    title: "Mridul — Creative Web Developer",
+    title: "Mridul — Websites for Brands With Taste",
     description:
-      "Immersive, interactive web experiences built with Three.js, WebGL and modern web tech.",
+      "Unforgettable websites for creative brands — immersive Three.js/WebGL experiences, sub-second loads, fixed quotes. Now booking limited client slots.",
   },
 };
 
