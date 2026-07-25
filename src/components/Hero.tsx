@@ -1,73 +1,144 @@
 import HeroCanvas from "./HeroCanvas";
+import HeroTime from "./HeroTime";
+import Magnetic from "./Magnetic";
+import Sparkle from "./Sparkle";
+
+const NAV = [
+  ["ABOUT", "#about"],
+  ["CRAFT", "#craft"],
+  ["FEEDBACK", "#feedback"],
+  ["WORK", "#work"],
+  ["CONTACT", "#contact"],
+] as const;
 
 export default function Hero() {
   return (
-    <section className="sticky top-0 h-svh min-h-150 w-full overflow-hidden bg-ink text-white">
+    <section className="sticky top-0 h-svh min-h-150 w-full overflow-hidden bg-cobalt text-white">
+      {/* the name, in ~26k particles of liquid chrome */}
       <HeroCanvas className="absolute inset-0" />
 
-      {/* subtle vignette so the type stays readable over the particles */}
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_40%,rgba(5,5,5,0.7)_100%)]" />
+      {/* edge vignette + film grain */}
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_44%,rgba(10,14,140,0.45)_78%,rgba(4,6,60,0.85)_100%)]" />
+      <div className="grain pointer-events-none absolute inset-0" />
 
-      <header className="absolute inset-x-0 top-0 z-10 flex items-center justify-between px-6 py-6 sm:px-10">
+      {/* corner registration marks */}
+      <div
+        className="pointer-events-none absolute inset-0 z-10 hidden font-mono text-sm text-white/20 sm:block"
+        aria-hidden="true"
+      >
+        <span className="absolute left-6 top-19">+</span>
+        <span className="absolute right-6 top-19">+</span>
+        <span className="absolute bottom-8 left-6">+</span>
+        <span className="absolute bottom-8 right-6">+</span>
+      </div>
+
+      <header className="absolute inset-x-0 top-0 z-20 flex items-center justify-between px-6 py-6 sm:px-10">
         <a href="#" className="font-display text-xl font-bold tracking-tight">
           M<span className="text-accent">.</span>
         </a>
-        <nav className="flex items-center gap-6 text-xs tracking-[0.15em] text-white/60 sm:gap-8">
-          <a href="#about" className="transition-colors hover:text-white">
-            ABOUT
-          </a>
-          <a href="#craft" className="transition-colors hover:text-white">
-            CRAFT
-          </a>
-          <a
-            href="#feedback"
-            className="hidden transition-colors hover:text-white sm:inline"
-          >
-            FEEDBACK
-          </a>
-          <a href="#work" className="transition-colors hover:text-white">
-            WORK
-          </a>
-          <a href="#contact" className="transition-colors hover:text-white">
-            CONTACT
-          </a>
+        <nav className="flex items-center gap-5 font-mono text-[10px] tracking-[0.18em] text-white/55 sm:gap-7">
+          {NAV.map(([label, href], i) => (
+            <a
+              key={href}
+              href={href}
+              className={`group transition-colors hover:text-white ${
+                label === "FEEDBACK" || label === "CRAFT"
+                  ? "hidden sm:inline"
+                  : ""
+              }`}
+            >
+              <span className="text-white/30 transition-colors group-hover:text-accent">
+                0{i + 1}
+              </span>{" "}
+              {label}
+            </a>
+          ))}
         </nav>
       </header>
 
-      <div className="pointer-events-none relative z-10 flex h-full flex-col items-center justify-center px-6 text-center">
-        <p className="mb-6 font-mono text-[11px] tracking-[0.3em] text-white/55">
-          MRIDUL — CREATIVE DEVELOPER
+      {/* real heading for screen readers & SEO — the visual one is particles */}
+      <h1 className="sr-only">
+        Mridul — creative developer building immersive web experiences with
+        Three.js and WebGL
+      </h1>
+
+      {/* caption riding just below the particle word */}
+      <div className="pointer-events-none absolute inset-x-0 top-[58%] z-10 text-center">
+        <p className="font-mono text-[10px] tracking-[0.42em] text-white/50">
+          CREATIVE DEVELOPER — PORTFOLIO<span className="text-accent">©</span>
+          2026
         </p>
-
-        <h1 className="max-w-5xl font-display text-[clamp(2.2rem,6.2vw,5.5rem)] font-bold uppercase leading-[1.05] tracking-tight">
-          Building immersive
-          <br />
-          web experiences<span className="text-accent">.</span>
-        </h1>
-
-        <p className="mt-6 max-w-md text-sm leading-relaxed text-white/60 sm:text-base">
-          I design and build interactive websites with Three.js, WebGL and
-          modern web technologies.
-        </p>
-
-        <div className="pointer-events-auto mt-10">
-          <a
-            href="#about"
-            className="group inline-flex items-center gap-2 border-b border-white/30 pb-1 text-sm tracking-wide text-white/80 transition-colors hover:border-accent hover:text-white"
-          >
-            Read my story
-            <span className="transition-transform group-hover:translate-x-1">
-              →
-            </span>
-          </a>
-        </div>
       </div>
 
-      <footer className="absolute inset-x-0 bottom-0 z-10 flex items-center justify-between px-6 py-6 font-mono text-[10px] tracking-[0.2em] text-white/45 sm:px-10">
-        <p>BASED IN INDIA</p>
-        <p className="hidden sm:block">THREE.JS / REACT / NEXT.JS</p>
-        <p>SCROLL ↓</p>
-      </footer>
+      {/* bottom cluster */}
+      <div className="absolute inset-x-0 bottom-0 z-10 flex items-end justify-between gap-8 px-6 pb-8 sm:px-10 sm:pb-10">
+        <div className="max-w-md">
+          <p className="flex items-center gap-2.5 font-mono text-[10px] tracking-[0.25em] text-white/60">
+            <span className="relative flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-60 motion-reduce:animate-none" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
+            </span>
+            AVAILABLE FOR SELECT WORK
+          </p>
+
+          <div className="relative mt-5">
+            <Sparkle className="-left-4 -top-3 h-5 w-5" delay={0.9} />
+            <Sparkle className="-right-2 bottom-1 h-4 w-4 sm:-right-6" delay={2.3} />
+            <p className="chrome-text font-display text-[clamp(1.35rem,2.6vw,2rem)] font-bold leading-tight tracking-tight">
+              Immersive experiences,
+              <br />
+              engineered with{" "}
+              <span className="font-script text-[1.18em] italic">care</span>
+              <span className="text-accent">.</span>
+            </p>
+          </div>
+
+          <p className="mt-5 font-mono text-[10px] tracking-[0.2em] text-white/55">
+            BASED IN INDIA — <HeroTime />
+            <span className="hidden sm:inline"> · THREE.JS / WEBGL / NEXT.JS</span>
+          </p>
+        </div>
+
+        {/* orbiting work button */}
+        <Magnetic className="shrink-0">
+          <a
+            href="#work"
+            aria-label="View selected work"
+            className="group relative block h-24 w-24 sm:h-28 sm:w-28"
+          >
+            <svg
+              viewBox="0 0 100 100"
+              className="orbit-spin absolute inset-0 h-full w-full motion-reduce:animate-none"
+              aria-hidden="true"
+            >
+              <defs>
+                <path
+                  id="orbit-path"
+                  d="M50,50 m-39,0 a39,39 0 1,1 78,0 a39,39 0 1,1 -78,0"
+                />
+              </defs>
+              <text className="fill-white/55 font-mono text-[8px] tracking-[0.16em] transition-colors group-hover:fill-white">
+                <textPath href="#orbit-path">
+                  SELECTED WORK • SELECTED WORK • SELECTED WORK •
+                </textPath>
+              </text>
+            </svg>
+            <span className="absolute inset-[26%] flex items-center justify-center rounded-full border border-white/15 text-lg text-accent transition-all duration-300 group-hover:border-accent group-hover:bg-accent group-hover:text-ink">
+              <span className="transition-transform duration-300 group-hover:translate-y-0.5">
+                ↓
+              </span>
+            </span>
+          </a>
+        </Magnetic>
+      </div>
+
+      {/* scroll cue */}
+      <div className="absolute bottom-8 left-1/2 z-10 hidden -translate-x-1/2 flex-col items-center gap-3 md:flex">
+        <span className="font-mono text-[9px] tracking-[0.35em] text-white/40">
+          SCROLL
+        </span>
+        <span className="scroll-beam" aria-hidden="true" />
+      </div>
     </section>
   );
 }

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Sparkle from "./Sparkle";
 
 function Eye({
   pupilRef,
@@ -95,25 +96,33 @@ export default function Contact() {
     <section
       ref={sectionRef}
       id="contact"
-      className="relative z-10 rounded-t-[2.5rem] bg-ink text-white sm:rounded-t-[3.5rem]"
+      className="relative z-10 overflow-hidden rounded-t-[2.5rem] bg-cobalt text-white sm:rounded-t-[3.5rem]"
     >
-      <div className="mx-auto flex min-h-svh max-w-5xl flex-col items-center justify-center px-6 py-24 text-center">
-        <p className="font-mono text-[11px] tracking-[0.3em] text-white/55">
+      <div className="grain pointer-events-none absolute inset-0" />
+
+      <div className="relative mx-auto flex min-h-svh max-w-5xl flex-col items-center justify-center px-6 py-24 text-center">
+        <p className="font-mono text-[11px] tracking-[0.3em] text-white/60">
           GOT AN IDEA? — LET&apos;S BUILD IT
         </p>
 
         <h2
           aria-label="Contact me"
-          className="mt-10 font-display font-bold uppercase leading-[0.95] tracking-tight"
+          className="relative mt-10 font-display font-bold uppercase leading-[0.95] tracking-tight"
         >
-          <span aria-hidden="true" className="block text-[clamp(3rem,10vw,8.5rem)]">
+          <Sparkle className="-top-6 left-[8%] h-6 w-6 sm:h-8 sm:w-8" delay={0.4} />
+          <Sparkle className="right-[4%] top-[38%] h-4 w-4 sm:h-6 sm:w-6" delay={1.7} />
+          <Sparkle className="-bottom-4 left-[30%] h-5 w-5 sm:h-7 sm:w-7" delay={2.9} />
+          <span
+            aria-hidden="true"
+            className="chrome-text block text-[clamp(3rem,10vw,8.5rem)]"
+          >
             Contact
           </span>
           <span
             aria-hidden="true"
             className="mt-[0.05em] flex items-center justify-center gap-[0.08em] text-[clamp(3rem,10vw,8.5rem)]"
           >
-            M
+            <span className="chrome-text">M</span>
             <Eye pupilRef={pupilL} />
             <Eye pupilRef={pupilR} />
           </span>
