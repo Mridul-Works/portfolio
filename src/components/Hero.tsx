@@ -39,14 +39,15 @@ export default function Hero() {
           M<span className="text-accent">.</span>
         </a>
         <nav className="flex items-center gap-5 font-mono text-[10px] tracking-[0.18em] text-white/55 sm:gap-7">
+          {/* text links don't fit a phone header — the pill carries mobile */}
           {NAV.map(([label, href], i) => (
             <a
               key={href}
               href={href}
-              className={`group transition-colors hover:text-white ${
+              className={`group whitespace-nowrap transition-colors hover:text-white ${
                 label === "SIGNATURE" || label === "METHOD"
-                  ? "hidden sm:inline"
-                  : ""
+                  ? "hidden lg:inline"
+                  : "hidden sm:inline"
               }`}
             >
               <span className="text-white/30 transition-colors group-hover:text-accent">
@@ -57,7 +58,7 @@ export default function Hero() {
           ))}
           <a
             href="#invest"
-            className="rounded-full bg-accent px-4 py-2 font-bold tracking-[0.15em] text-ink transition-transform hover:scale-[1.04]"
+            className="whitespace-nowrap rounded-full bg-accent px-4 py-2 font-bold tracking-[0.15em] text-ink transition-transform hover:scale-[1.04]"
           >
             START A PROJECT
           </a>

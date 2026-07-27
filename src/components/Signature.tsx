@@ -83,7 +83,7 @@ function MotionTile() {
         className="h-4 w-4 rounded-full bg-accent shadow-[0_0_24px_rgba(217,255,61,0.55)] will-change-transform"
       />
       <p className="pointer-events-none absolute bottom-3 left-4 font-mono text-[9px] tracking-[0.25em] text-white/30">
-        MOVE YOUR CURSOR — IT FOLLOWS WITH MANNERS
+        CURSOR OR FINGER — IT FOLLOWS WITH MANNERS
       </p>
     </div>
   );
@@ -130,11 +130,11 @@ function DepthTile() {
     <div
       onPointerMove={onMove}
       onPointerLeave={onLeave}
-      className="relative flex h-56 items-center justify-center overflow-hidden [perspective:700px] sm:h-64"
+      className="relative flex h-56 items-center justify-center overflow-hidden perspective-[700px] sm:h-64"
     >
       <div
         ref={cardRef}
-        className="flex h-32 w-44 items-center justify-center rounded-2xl border border-white/20 bg-white/5 will-change-transform [transform-style:preserve-3d]"
+        className="flex h-32 w-44 items-center justify-center rounded-2xl border border-white/20 bg-white/5 will-change-transform transform-3d"
       >
         <span className="chrome-text font-display text-2xl font-bold tracking-tight">
           DEPTH
@@ -353,16 +353,16 @@ export default function Signature() {
           </p>
         </Reveal>
 
-        <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-14 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {TILES.map((tile, i) => (
             <Reveal key={tile.key} delay={i * 70}>
               <div className="overflow-hidden rounded-2xl border border-white/15 bg-white/5 transition-colors duration-500 hover:border-white/40">
                 <tile.Demo />
                 <div className="flex items-baseline justify-between gap-4 border-t border-white/10 px-4 py-3.5">
-                  <p className="font-mono text-[10px] tracking-[0.25em] text-accent">
+                  <p className="shrink-0 font-mono text-[10px] tracking-[0.25em] text-accent">
                     {tile.label}
                   </p>
-                  <p className="truncate text-xs text-white/55">
+                  <p className="min-w-0 truncate text-xs text-white/55">
                     {tile.caption}
                   </p>
                 </div>

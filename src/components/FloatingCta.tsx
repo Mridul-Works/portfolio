@@ -57,7 +57,8 @@ export default function FloatingCta() {
         <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-60 motion-reduce:animate-none" />
         <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
       </span>
-      SLOTS OPEN — START A PROJECT
+      <span className="hidden sm:inline">SLOTS OPEN — </span>
+      START A PROJECT
     </a>
   );
 }

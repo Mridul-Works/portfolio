@@ -81,9 +81,11 @@ body {
   animation: fb-marquee 18s linear infinite;
 }
 
-/* outlined display type — inherits currentColor for either theme */
+/* outlined display type. The stroke color must be explicit: with
+   `color: transparent`, currentColor resolves to transparent too and
+   the outline vanishes. Override --stroke-color on light backgrounds. */
 .stroke-only {
-  -webkit-text-stroke: 1px currentColor;
+  -webkit-text-stroke: 1.5px var(--stroke-color, rgba(255, 255, 255, 0.85));
   color: transparent;
 }
 
