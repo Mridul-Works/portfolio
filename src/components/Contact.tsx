@@ -1,3 +1,4 @@
+import GuideCursor from "./GuideCursor";
 import Magnetic from "./Magnetic";
 import MarqueeBand from "./MarqueeBand";
 import Sparkle from "./Sparkle";
@@ -25,6 +26,8 @@ export default function Contact() {
       </div>
 
       <div className="relative mx-auto flex min-h-svh max-w-5xl flex-col items-center justify-center px-6 py-24 text-center">
+        {/* the ghost cursor — can't stop drifting into the button */}
+        <GuideCursor targetId="contact-cta" />
         <p className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-4 py-2 font-mono text-[10px] tracking-[0.25em] text-white/70">
           <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-accent" />
           OPEN TO WORK — AVAILABLE NOW
@@ -48,6 +51,7 @@ export default function Contact() {
 
         <Magnetic strength={0.25} className="mt-12">
           <a
+            id="contact-cta"
             href={MAILTO}
             className="inline-flex items-center gap-3 rounded-full bg-accent px-8 py-4 font-mono text-xs font-bold tracking-[0.15em] text-ink shadow-[0_10px_30px_-10px_rgba(217,255,61,0.7)] transition-transform duration-300 hover:scale-[1.03]"
           >
