@@ -1,14 +1,10 @@
-"use client";
-
-import { useState } from "react";
 import Reveal from "./Reveal";
 import Stardust from "./Stardust";
 import ProjectDemo from "./WorkDemos";
 
 /**
- * Case studies, editorial style: one big outcome number per project,
- * a live demo instead of a screenshot, and the honesty toggle — the
- * single most trust-building toy on the site — kept front and centre.
+ * Case studies, editorial style: one big outcome number per project and
+ * a live demo instead of a screenshot — real production work, linked.
  */
 
 type Case = {
@@ -19,69 +15,39 @@ type Case = {
   metric: string;
   metricLabel: string;
   pro: string;
-  honest: string;
   proTags: string[];
-  honestTags: string[];
+  link: string;
+  linkLabel: string;
 };
 
 const CASES: Case[] = [
   {
-    seed: "nova",
-    title: "Nova Markets",
-    sector: "FINTECH",
-    year: "2026",
-    metric: "0.4s",
-    metricLabel: "CHART REFRESH AT 40K TICKS / MIN",
-    pro: "A real-time trading dashboard that makes a firehose of data feel calm. Traders stopped complaining — in fintech, that's a standing ovation.",
-    honest:
-      "Line goes up, line goes down. I spent two weeks making the line go up and down smoothly.",
-    proTags: ["NEXT.JS", "WEBSOCKETS", "CANVAS"],
-    honestTags: ["CAFFEINE", "REDRAWS", "DOUBT"],
+    seed: "mastersunion",
+    title: "Masters' Union",
+    sector: "EDTECH",
+    year: "CURRENT ROLE",
+    metric: "ASAP",
+    metricLabel: "THE ONLY DEADLINE MARKETING EVER GAVE ME",
+    pro: "The website of Masters' Union, one of India's most ambitious business schools. I build the program and campaign pages the marketing team points paid ads at — briefed tight, content shaped around the campaign, and live before the ad spend starts.",
+    proTags: ["CAMPAIGN PAGES", "PAID TRAFFIC", "TIGHT DEADLINES"],
+    link: "https://mastersunion.org",
+    linkLabel: "MASTERSUNION.ORG",
   },
   {
-    seed: "aurora",
-    title: "Aurora Configurator",
-    sector: "E-COMMERCE",
-    year: "2025",
-    metric: "4:12",
-    metricLabel: "AVERAGE TIME SPENT WITH ONE PRODUCT",
-    pro: "An interactive 3D product configurator at 60fps on mobile. Four minutes of undivided attention per visitor — most brands get eight seconds.",
-    honest:
-      "You can spin a shoe. That's it. People spun the shoe for four minutes on average.",
-    proTags: ["THREE.JS", "WEBGL", "GLTF"],
-    honestTags: ["SHOE", "SPINNING", "4 MIN AVG"],
-  },
-  {
-    seed: "papertrail",
-    title: "Papertrail",
-    sector: "EDITORIAL",
-    year: "2025",
-    metric: "100",
-    metricLabel: "LIGHTHOUSE SCORE, EVERY PAGE",
-    pro: "An editorial platform with a custom CMS and static generation. Loads before the reader finishes blinking — speed is the quietest luxury.",
-    honest:
-      "It's a blog. The fastest blog you've ever seen. Nobody asked for a blog this fast.",
-    proTags: ["SSG", "CMS", "LIGHTHOUSE 100"],
-    honestTags: ["A BLOG", "BUT FAST", "WHY THO"],
-  },
-  {
-    seed: "orbit",
-    title: "Orbit UI",
-    sector: "PRODUCT",
-    year: "2024",
-    metric: "30+",
-    metricLabel: "SCREENS, ONE DESIGN SYSTEM",
-    pro: "A tokenised design system powering two products. Every button agrees with every other button — your brand, made structurally incapable of drifting.",
-    honest:
-      "I made buttons. Then I made the buttons agree with each other. It took months.",
-    proTags: ["DESIGN TOKENS", "A11Y", "STORYBOOK"],
-    honestTags: ["BUTTONS", "MEETINGS", "MONTHS"],
+    seed: "masterscamp",
+    title: "Masters' Camp",
+    sector: "EDTECH",
+    year: "LIVE",
+    metric: "0",
+    metricLabel: "CAMPAIGNS THAT LAUNCHED BEFORE THEIR PAGE WAS READY",
+    pro: "Masters' Union's program for younger builders. Same playbook, faster cycles — landing pages written around what each ad promised, so the click and the page always told the same story.",
+    proTags: ["LANDING PAGES", "ADS + CONTENT", "FAST TURNAROUND"],
+    link: "https://masterscamp.org",
+    linkLabel: "MASTERSCAMP.ORG",
   },
 ];
 
 export default function Showcase() {
-  const [honest, setHonest] = useState(false);
-
   return (
     <section
       id="work"
@@ -91,43 +57,19 @@ export default function Showcase() {
 
       <div className="relative mx-auto max-w-6xl px-6 py-24 sm:py-36">
         <Reveal>
-          <div className="flex flex-wrap items-end justify-between gap-6">
-            <div>
-              <p className="font-mono text-[11px] tracking-[0.3em] text-zinc-500">
-                WORK — OUTCOMES, NOT SCREENSHOTS
-              </p>
-              <h2 className="mt-6 font-display text-3xl font-bold leading-tight tracking-tight sm:text-5xl">
-                Every preview below is{" "}
-                <span className="font-script italic text-cobalt">alive</span>.
-              </h2>
-              <p className="mt-4 max-w-xl text-sm leading-relaxed text-zinc-600 sm:text-base">
-                No stock mockups — each panel runs a tiny working version of
-                the thing it claims. And because trust is the whole game,
-                there&apos;s a toggle that makes me describe my own work the
-                way I would to a friend.
-              </p>
-            </div>
-
-            <button
-              type="button"
-              onClick={() => setHonest((h) => !h)}
-              aria-pressed={honest}
-              className="flex items-center gap-2.5 rounded-full border border-zinc-200 px-4 py-2 font-mono text-[10px] tracking-[0.2em] text-zinc-500 transition-colors hover:border-zinc-400 hover:text-zinc-900"
-            >
-              HONESTY: {honest ? "ON" : "OFF"}
-              <span
-                aria-hidden="true"
-                className={`relative h-4 w-7 rounded-full transition-colors ${
-                  honest ? "bg-accent" : "bg-zinc-300"
-                }`}
-              >
-                <span
-                  className={`absolute top-0.5 h-3 w-3 rounded-full bg-white transition-transform ${
-                    honest ? "translate-x-3.5" : "translate-x-0.5"
-                  }`}
-                />
-              </span>
-            </button>
+          <div>
+            <p className="font-mono text-[11px] tracking-[0.3em] text-zinc-500">
+              WORK — OUTCOMES, NOT SCREENSHOTS
+            </p>
+            <h2 className="mt-6 font-display text-3xl font-bold leading-tight tracking-tight sm:text-5xl">
+              Every preview below is{" "}
+              <span className="font-script italic text-cobalt">alive</span>.
+            </h2>
+            <p className="mt-4 max-w-xl text-sm leading-relaxed text-zinc-600 sm:text-base">
+              No stock mockups — each panel runs a tiny working version of
+              the real production rhythm, and every project links straight
+              to the live site.
+            </p>
           </div>
         </Reveal>
 
@@ -140,7 +82,7 @@ export default function Showcase() {
                 }`}
               >
                 <div className="relative aspect-4/3 overflow-hidden rounded-2xl border border-zinc-200 shadow-[0_24px_60px_-30px_rgba(5,5,5,0.35)]">
-                  <ProjectDemo seed={c.seed} honest={honest} title={c.title} />
+                  <ProjectDemo seed={c.seed} title={c.title} />
                 </div>
 
                 <div>
@@ -161,23 +103,31 @@ export default function Showcase() {
                   </div>
 
                   <p className="mt-6 max-w-md text-sm leading-relaxed text-zinc-600 sm:text-base">
-                    {honest ? c.honest : c.pro}
+                    {c.pro}
                   </p>
 
                   <div className="mt-5 flex flex-wrap gap-2">
-                    {(honest ? c.honestTags : c.proTags).map((tag) => (
+                    {c.proTags.map((tag) => (
                       <span
                         key={tag}
-                        className={`rounded-full border px-3 py-1 font-mono text-[9px] tracking-[0.15em] transition-colors ${
-                          honest
-                            ? "border-accent-deep/40 text-accent-deep"
-                            : "border-zinc-200 text-zinc-500"
-                        }`}
+                        className="rounded-full border border-zinc-200 px-3 py-1 font-mono text-[9px] tracking-[0.15em] text-zinc-500"
                       >
                         {tag}
                       </span>
                     ))}
                   </div>
+
+                  <a
+                    href={c.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group/link mt-6 inline-flex items-center gap-2 font-mono text-[10px] font-bold tracking-[0.2em] text-cobalt transition-colors hover:text-cobalt-deep"
+                  >
+                    {c.linkLabel}
+                    <span className="transition-transform group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5">
+                      ↗
+                    </span>
+                  </a>
                 </div>
               </article>
             </Reveal>
@@ -187,9 +137,8 @@ export default function Showcase() {
         <Reveal className="mt-20">
           <div className="flex flex-wrap items-center justify-between gap-6 rounded-2xl border border-zinc-200 bg-paper px-6 py-6 sm:px-8">
             <p className="max-w-md text-sm leading-relaxed text-zinc-600">
-              {honest
-                ? "The truth: all of it was panic, coffee and 1am documentation. All of it also shipped. Your product will too."
-                : "Code walkthroughs, deep dives and references on request — happy to defend every decision in an interview."}
+              Code walkthroughs, deep dives and references on request — happy
+              to defend every decision in an interview.
             </p>
             <a
               href="#hire"

@@ -71,13 +71,7 @@ export default function Hero() {
         Three.js and WebGL
       </h1>
 
-      {/* caption riding just below the particle word */}
-      <div className="pointer-events-none absolute inset-x-0 top-[58%] z-10 text-center">
-        <p className="font-mono text-[10px] tracking-[0.42em] text-white/50">
-          CREATIVE FRONTEND DEVELOPER<span className="text-accent">©</span>
-          2026
-        </p>
-      </div>
+      
 
       {/* bottom cluster */}
       <div className="absolute inset-x-0 bottom-0 z-10 flex items-end justify-between gap-8 px-6 pb-8 sm:px-10 sm:pb-10">

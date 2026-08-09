@@ -383,8 +383,8 @@ export default function HeroCanvas({ className }: { className?: string }) {
         uMouse: { value: new THREE.Vector3(99, 99, 99) },
         uShockPos: { value: new THREE.Vector3(0, 0, 0) },
         uShockTime: { value: -10 },
-        uColorA: { value: new THREE.Color("#9aa3ea") },
-        uColorB: { value: new THREE.Color("#ffffff") },
+        uColorA: { value: new THREE.Color("#6a74c4") },
+        uColorB: { value: new THREE.Color("#dfe3f2") },
         uColorC: { value: new THREE.Color("#ffffff") },
       },
     });

@@ -70,7 +70,7 @@ const FAQ = [
   },
   {
     q: "How do I know the polish isn't just this one site?",
-    a: "Ask me to prove it. I'm happy to do a take-home task, a live pairing session, or a code walkthrough of anything in the work section. The honesty toggle up there should tell you how I talk about my own work.",
+    a: "Ask me to prove it. I'm happy to do a take-home task, a live pairing session, or a code walkthrough of anything in the work section — including every corner of this site.",
   },
   {
     q: "How soon can you start?",

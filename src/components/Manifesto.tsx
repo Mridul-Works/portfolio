@@ -119,12 +119,7 @@ export default function Manifesto() {
                       {belief.detail}
                     </p>
                   </div>
-                  <span
-                    aria-hidden="true"
-                    className="self-center font-mono text-sm text-zinc-300 opacity-0 transition-all group-hover:translate-x-1 group-hover:text-cobalt group-hover:opacity-100"
-                  >
-                    →
-                  </span>
+              
                 </div>
               </Reveal>
             ))}
