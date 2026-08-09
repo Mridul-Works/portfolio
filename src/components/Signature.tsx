@@ -297,6 +297,8 @@ const TILES = [
     label: "TYPOGRAPHY",
     caption: "Treated like architecture, not decoration.",
     Demo: TypeTile,
+    // hover-only demo — pointless on touch screens
+    desktopOnly: true,
   },
   {
     key: "depth",
@@ -336,7 +338,7 @@ export default function Signature() {
       <div className="grain pointer-events-none absolute inset-0" />
       <Stardust count={16} seed={11} className="text-[#cfd8ea]" />
 
-      <div className="relative mx-auto max-w-5xl px-6 py-24 sm:py-36">
+      <div className="relative mx-auto max-w-5xl px-6 py-20 sm:py-36">
         <Reveal>
           <p className="font-mono text-[11px] tracking-[0.3em] text-white/55">
             THE SIGNATURE — PROOF YOU CAN TOUCH
@@ -355,7 +357,11 @@ export default function Signature() {
 
         <div className="mt-14 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {TILES.map((tile, i) => (
-            <Reveal key={tile.key} delay={i * 70}>
+            <Reveal
+              key={tile.key}
+              delay={i * 70}
+              className={"desktopOnly" in tile ? "hidden sm:block" : undefined}
+            >
               <div className="overflow-hidden rounded-2xl border border-white/15 bg-white/5 transition-colors duration-500 hover:border-white/40">
                 <tile.Demo />
                 <div className="flex items-baseline justify-between gap-4 border-t border-white/10 px-4 py-3.5">

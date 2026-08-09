@@ -60,7 +60,7 @@ export default function Manifesto() {
     >
       <Stardust count={9} seed={5} className="text-zinc-300" />
 
-      <div className="relative mx-auto max-w-5xl px-6 py-24 sm:py-36">
+      <div className="relative mx-auto max-w-5xl px-6 py-20 sm:py-36">
         <Reveal>
           <p className="font-mono text-[11px] tracking-[0.3em] text-zinc-500">
             FIRST — WHO I AM

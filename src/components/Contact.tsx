@@ -37,7 +37,7 @@ export default function Contact() {
           GOT A TEAM? — I&apos;D LIKE TO JOIN IT
         </p>
 
-        <h2 className="relative mt-10 font-display font-bold uppercase leading-[0.95] tracking-tight">
+        <h2 className="relative mt-8 font-display font-bold uppercase leading-[0.95] tracking-tight sm:mt-10">
           <Sparkle className="-top-6 left-[8%] h-6 w-6 sm:h-8 sm:w-8" delay={0.4} />
           <Sparkle className="right-[4%] top-[38%] h-4 w-4 sm:h-6 sm:w-6" delay={1.7} />
           <Sparkle className="-bottom-4 left-[30%] h-5 w-5 sm:h-7 sm:w-7" delay={2.9} />

@@ -93,7 +93,7 @@ export default function Hire() {
       <div className="grain pointer-events-none absolute inset-0" />
       <Stardust count={14} seed={31} className="text-[#cfd8ea]" />
 
-      <div className="relative mx-auto max-w-5xl px-6 py-24 sm:py-36">
+      <div className="relative mx-auto max-w-5xl px-6 py-20 sm:py-36">
         <Reveal>
           <p className="font-mono text-[11px] tracking-[0.3em] text-white/60">
             HIRE ME — WHAT YOUR TEAM ACTUALLY GETS

@@ -74,7 +74,7 @@ export default function Hero() {
       
 
       {/* bottom cluster */}
-      <div className="absolute inset-x-0 bottom-0 z-10 mx-auto flex max-w-7xl items-end justify-between gap-8 px-6 pb-8 sm:pb-10">
+      <div className="absolute inset-x-0 bottom-0 z-10 mx-auto flex max-w-7xl items-end justify-between gap-5 px-6 pb-8 sm:gap-8 sm:pb-10">
         <div className="@container w-full max-w-2xl">
           <a
             href="#hire"
@@ -84,7 +84,9 @@ export default function Hero() {
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-60 motion-reduce:animate-none" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
             </span>
-            OPEN TO WORK — FRONTEND / CREATIVE DEVELOPER ROLES
+            OPEN TO WORK  {" "}
+            <span className="hidden sm:inline">FRONTEND / CREATIVE&nbsp;</span>
+            DEVELOPER ROLES
             <span className="opacity-0 transition-opacity group-hover:opacity-100">
               →
             </span>
@@ -93,7 +95,7 @@ export default function Hero() {
           <div className="relative mt-5">
             <Sparkle className="-left-4 -top-3 h-5 w-5" delay={0.9} />
             <Sparkle className="-right-2 bottom-1 h-4 w-4 sm:-right-6" delay={2.3} />
-            <p className="chrome-text font-display text-[clamp(1rem,4.9cqw,2.2rem)] font-bold leading-tight tracking-tight">
+            <p className="chrome-text font-display text-[clamp(1.1rem,4.9cqw,2.2rem)] font-bold leading-tight tracking-tight">
               <span className="block">
                 Interfaces people remember 
               </span>
@@ -111,8 +113,8 @@ export default function Hero() {
           </p>
         </div>
 
-        {/* orbiting work button */}
-        <Magnetic className="shrink-0">
+        {/* orbiting work button — desktop only; phones scroll anyway */}
+        <Magnetic className="hidden shrink-0 sm:block">
           <a
             href="#work"
             aria-label="View selected work"

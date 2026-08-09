@@ -42,7 +42,7 @@ const DRAFTS = [
     from: "Marketing Team — Masters' Union",
     subject: "re: reference (honest version)",
     saved: "6:41 PM",
-    tilt: "-rotate-1",
+    tilt: "lg:-rotate-1",
     body: (
       <>
         <p>To whoever gets to work with him next,</p>
@@ -62,7 +62,7 @@ const DRAFTS = [
     from: "Campaign Lead — Masters' Union",
     subject: "re: is he any good?",
     saved: "7:12 AM",
-    tilt: "rotate-1",
+    tilt: "lg:rotate-1",
     body: (
       <>
         <p>Short answer —</p>
@@ -93,7 +93,7 @@ export default function Record() {
       <div className="grain pointer-events-none absolute inset-0" />
       <Stardust count={10} seed={41} className="text-[#cfd8ea]" />
 
-      <div className="relative mx-auto max-w-5xl px-6 py-24 sm:py-32">
+      <div className="relative mx-auto max-w-5xl px-6 py-20 sm:py-32">
         <Reveal>
           <p className="font-mono text-[11px] tracking-[0.3em] text-white/60">
             THE RECORD — FOR THE SKIMMERS
