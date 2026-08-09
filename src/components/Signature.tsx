@@ -301,7 +301,7 @@ const TILES = [
   {
     key: "depth",
     label: "DEPTH",
-    caption: "3D where it earns its place. (The hero is 26,000 particles.)",
+    caption: "3D where it earns its place. (The hero is 34,000 particles.)",
     Demo: DepthTile,
   },
   {
@@ -381,7 +381,7 @@ export default function Signature() {
       </div>
 
       <div className="relative pb-24 text-white/90 sm:pb-28">
-        <MarqueeBand text="PROOF OVER PROMISES —" />
+        <MarqueeBand text="PROOF OVER PROMISES " />
       </div>
     </section>
   );

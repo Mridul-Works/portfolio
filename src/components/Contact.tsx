@@ -6,7 +6,7 @@ import Stardust from "./Stardust";
 
 // same brief as the hire section — teams land here ready to talk,
 // the email arrives pre-filled with the questions that scope a role
-const MAILTO = `mailto:hello@mridul.dev?subject=${encodeURIComponent(
+const MAILTO = `mailto:Mridul2431@gmail.com?subject=${encodeURIComponent(
   "Opportunity — let's talk"
 )}&body=${encodeURIComponent(
   `Company / team:\n\nThe role:\n\nYour stack:\n\nWhat I'd build first:\n\nNext step (call / task / coffee):\n`
@@ -22,7 +22,7 @@ export default function Contact() {
       <Stardust count={16} seed={47} className="text-[#cfd8ea]" />
 
       <div className="relative pt-14 text-white/90 sm:pt-20">
-        <MarqueeBand text="LET'S MAKE SOMETHING UNFORGETTABLE —" />
+        <MarqueeBand text="LET'S MAKE SOMETHING UNFORGETTABLE " />
       </div>
 
       <div className="relative mx-auto flex min-h-svh max-w-5xl flex-col items-center justify-center px-6 py-24 text-center">
@@ -61,11 +61,11 @@ export default function Contact() {
         </Magnetic>
 
         <a
-          href="mailto:hello@mridul.dev"
+          href="mailto:Mridul2431@gmail.com"
           className="group mt-8 inline-flex items-center gap-3 text-base text-white/70 transition-colors hover:text-white sm:text-xl"
         >
           <span className="border-b border-white/25 pb-1 transition-colors group-hover:border-accent">
-            hello@mridul.dev
+            Mridul2431@gmail.com
           </span>
           <span className="transition-transform group-hover:-translate-y-1 group-hover:translate-x-1">
             ↗
@@ -73,22 +73,31 @@ export default function Contact() {
         </a>
 
         <div className="mt-14 flex items-center gap-8 font-mono text-xs tracking-[0.2em] text-white/55">
-          <a href="#" className="transition-colors hover:text-accent">
+          <a
+            href="https://github.com/Mridul-Works"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="transition-colors hover:text-accent"
+          >
             GITHUB
           </a>
-          <a href="#" className="transition-colors hover:text-accent">
+          <a
+            href="https://www.linkedin.com/in/mridul-devat"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="transition-colors hover:text-accent"
+          >
             LINKEDIN
-          </a>
-          <a href="#" className="transition-colors hover:text-accent">
-            TWITTER
           </a>
         </div>
       </div>
 
-      <footer className="flex items-center justify-between border-t border-white/10 px-6 py-6 font-mono text-[10px] tracking-[0.2em] text-white/45 sm:px-10">
-        <p>© 2026 MRIDUL</p>
-        <p className="hidden sm:block">DESIGNED & BUILT WITH NEXT.JS + THREE.JS</p>
-        <p>INDIA</p>
+      <footer className="border-t border-white/10 px-6 py-6 font-mono text-[10px] tracking-[0.2em] text-white/45">
+        <div className="mx-auto flex max-w-5xl items-center justify-between">
+          <p>© 2026 MRIDUL</p>
+          <p className="hidden sm:block">DESIGNED & BUILT WITH NEXT.JS + THREE.JS</p>
+          <p>INDIA</p>
+        </div>
       </footer>
     </section>
   );

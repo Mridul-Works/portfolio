@@ -78,7 +78,7 @@ body {
 }
 
 .band-marquee {
-  animation: fb-marquee 18s linear infinite;
+  animation: fb-marquee 30s linear infinite;
 }
 
 /* outlined display type. The stroke color must be explicit: with

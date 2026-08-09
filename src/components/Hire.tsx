@@ -16,7 +16,7 @@ const ROLES = [
     name: "The Creative Engineer",
     focus: "THREE.JS / WEBGL / MOTION",
     pitch:
-      "The hero of this site is 26,000 particles of liquid chrome. I build the parts of the product people screenshot.",
+      "The hero of this site is 34,000 particles of liquid chrome. I build the parts of the product people screenshot.",
     includes: [
       "Three.js, shaders, particles",
       "Motion baked in, not bolted on",
@@ -78,7 +78,7 @@ const FAQ = [
   },
 ];
 
-const MAILTO = `mailto:hello@mridul.dev?subject=${encodeURIComponent(
+const MAILTO = `mailto:Mridul2431@gmail.com?subject=${encodeURIComponent(
   "Opportunity — let's talk"
 )}&body=${encodeURIComponent(
   `Company / team:\n\nThe role:\n\nYour stack:\n\nWhat I'd build first:\n\nNext step (call / task / coffee):\n`

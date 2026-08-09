@@ -4,6 +4,7 @@ import Hero from "@/components/Hero";
 import Hire from "@/components/Hire";
 import Manifesto from "@/components/Manifesto";
 import Method from "@/components/Method";
+import Record from "@/components/Record";
 import Showcase from "@/components/Showcase";
 import Signature from "@/components/Signature";
 
@@ -14,6 +15,7 @@ export default function Home() {
       <Manifesto />
       <Signature />
       <Showcase />
+      <Record />
       {/* <Method /> */}
       <Hire />
       <Contact />

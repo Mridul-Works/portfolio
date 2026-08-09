@@ -8,7 +8,7 @@ import * as THREE from "three";
  *
  * Each word is rasterized to an offscreen 2D canvas (in its own font — Syne
  * caps or flowing Instrument Serif script), its inked pixels are sampled into
- * target positions, and ~26k silver particles assemble into the glyphs over a
+ * target positions, and ~34k silver particles assemble into the glyphs over a
  * cobalt field. Four-point glint stars twinkle on the letterforms like light
  * catching chrome. Words morph with per-particle stagger + swirl, the cloud
  * repels around the cursor, detonates on click, and dissolves upward as the
@@ -354,7 +354,7 @@ export default function HeroCanvas({ className }: { className?: string }) {
     const small =
       Math.min(window.innerWidth, window.innerHeight) < 700 ||
       (navigator.hardwareConcurrency ?? 8) <= 4;
-    const COUNT = small ? 10000 : 26000;
+    const COUNT = small ? 13000 : 34000;
 
     // --- word particles ---
     const geometry = new THREE.BufferGeometry();
@@ -383,8 +383,8 @@ export default function HeroCanvas({ className }: { className?: string }) {
         uMouse: { value: new THREE.Vector3(99, 99, 99) },
         uShockPos: { value: new THREE.Vector3(0, 0, 0) },
         uShockTime: { value: -10 },
-        uColorA: { value: new THREE.Color("#6a74c4") },
-        uColorB: { value: new THREE.Color("#dfe3f2") },
+        uColorA: { value: new THREE.Color("#8a93de") },
+        uColorB: { value: new THREE.Color("#f4f6fb") },
         uColorC: { value: new THREE.Color("#ffffff") },
       },
     });

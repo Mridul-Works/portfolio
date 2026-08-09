@@ -8,14 +8,14 @@ const NAV = [
   ["ABOUT", "#manifesto"],
   ["SIGNATURE", "#signature"],
   ["WORK", "#work"],
-  ["METHOD", "#method"],
+  ["HIRE", "#hire"],
   ["CONTACT", "#contact"],
 ] as const;
 
 export default function Hero() {
   return (
     <section className="sticky top-0 h-svh min-h-150 w-full overflow-hidden bg-cobalt text-white">
-      {/* the name, in ~26k particles of liquid chrome */}
+      {/* the name, in ~34k particles of liquid chrome */}
       <HeroCanvas className="absolute inset-0" />
 
       {/* edge vignette + film grain */}
@@ -34,7 +34,7 @@ export default function Hero() {
         <span className="absolute bottom-8 right-6">+</span>
       </div>
 
-      <header className="absolute inset-x-0 top-0 z-20 flex items-center justify-between px-6 py-6 sm:px-10">
+      <header className="absolute inset-x-0 top-0 z-20 mx-auto flex max-w-7xl items-center justify-between px-6 py-6">
         <a href="#" className="font-display text-xl font-bold tracking-tight">
           M<span className="text-accent">.</span>
         </a>
@@ -45,7 +45,7 @@ export default function Hero() {
               key={href}
               href={href}
               className={`group whitespace-nowrap transition-colors hover:text-white ${
-                label === "SIGNATURE" || label === "METHOD"
+                label === "SIGNATURE" || label === "HIRE"
                   ? "hidden lg:inline"
                   : "hidden sm:inline"
               }`}
@@ -74,8 +74,8 @@ export default function Hero() {
       
 
       {/* bottom cluster */}
-      <div className="absolute inset-x-0 bottom-0 z-10 flex items-end justify-between gap-8 px-6 pb-8 sm:px-10 sm:pb-10">
-        <div className="max-w-md">
+      <div className="absolute inset-x-0 bottom-0 z-10 mx-auto flex max-w-7xl items-end justify-between gap-8 px-6 pb-8 sm:pb-10">
+        <div className="@container w-full max-w-2xl">
           <a
             href="#hire"
             className="group inline-flex items-center gap-2.5 font-mono text-[10px] tracking-[0.25em] text-white/60 transition-colors hover:text-white"
@@ -93,12 +93,15 @@ export default function Hero() {
           <div className="relative mt-5">
             <Sparkle className="-left-4 -top-3 h-5 w-5" delay={0.9} />
             <Sparkle className="-right-2 bottom-1 h-4 w-4 sm:-right-6" delay={2.3} />
-            <p className="chrome-text font-display text-[clamp(1.35rem,2.6vw,2rem)] font-bold leading-tight tracking-tight">
-              Interfaces people remember —
-              <br />
-              built with code, motion and{" "}
-              <span className="font-script text-[1.18em] italic">taste</span>
-              <span className="text-accent">.</span>
+            <p className="chrome-text font-display text-[clamp(1rem,4.9cqw,2.2rem)] font-bold leading-tight tracking-tight">
+              <span className="block">
+                Interfaces people remember 
+              </span>
+              <span className="block">
+                built with code, motion and{" "}
+                <span className="font-script text-[1.18em] italic">taste</span>
+                <span className="text-accent">.</span>
+              </span>
             </p>
           </div>
 
