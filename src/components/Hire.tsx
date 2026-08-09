@@ -1,3 +1,4 @@
+import Eyes from "./Eyes";
 import Magnetic from "./Magnetic";
 import Reveal from "./Reveal";
 import Stardust from "./Stardust";
@@ -203,14 +204,18 @@ export default function Hire() {
         {/* the close */}
         <Reveal delay={180} className="mt-16">
           <div className="flex flex-col items-start gap-6 rounded-2xl border border-white/15 bg-white/5 px-6 py-8 sm:flex-row sm:items-center sm:justify-between sm:px-8">
-            <div>
-              <p className="font-display text-xl font-bold tracking-tight sm:text-2xl">
-                The 20-minute call costs nothing.
-              </p>
-              <p className="mt-1.5 text-sm text-white/60">
-                Worst case: you leave with a free second opinion on your
-                frontend and one fewer CV to read.
-              </p>
+            <div className="flex items-center gap-5">
+              {/* the eyes — watching you decide, blinking politely */}
+              <Eyes className="shrink-0 text-4xl sm:text-5xl" />
+              <div>
+                <p className="font-display text-xl font-bold tracking-tight sm:text-2xl">
+                  The 20-minute call costs nothing.
+                </p>
+                <p className="mt-1.5 text-sm text-white/60">
+                  Worst case: you leave with a free second opinion on your
+                  frontend and one fewer CV to read.
+                </p>
+              </div>
             </div>
             <Magnetic strength={0.25} className="shrink-0">
               <a
