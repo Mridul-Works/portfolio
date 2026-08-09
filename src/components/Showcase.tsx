@@ -188,14 +188,14 @@ export default function Showcase() {
           <div className="flex flex-wrap items-center justify-between gap-6 rounded-2xl border border-zinc-200 bg-paper px-6 py-6 sm:px-8">
             <p className="max-w-md text-sm leading-relaxed text-zinc-600">
               {honest
-                ? "The truth: all of it was panic, coffee and 1am documentation. All of it also shipped. Yours will too."
-                : "Full case studies and references on request — the tie comes off the moment the contract is signed."}
+                ? "The truth: all of it was panic, coffee and 1am documentation. All of it also shipped. Your product will too."
+                : "Code walkthroughs, deep dives and references on request — happy to defend every decision in an interview."}
             </p>
             <a
-              href="#invest"
+              href="#hire"
               className="group inline-flex items-center gap-3 rounded-full bg-cobalt px-7 py-3.5 font-mono text-xs font-bold tracking-[0.15em] text-white transition-colors hover:bg-cobalt-deep"
             >
-              YOUR PROJECT NEXT — SEE PRICING
+              WANT THIS ON YOUR TEAM?
               <span className="transition-transform group-hover:translate-x-1">
                 →
               </span>

@@ -1,7 +1,7 @@
 import Contact from "@/components/Contact";
 import FloatingCta from "@/components/FloatingCta";
 import Hero from "@/components/Hero";
-import Invest from "@/components/Invest";
+import Hire from "@/components/Hire";
 import Manifesto from "@/components/Manifesto";
 import Method from "@/components/Method";
 import Showcase from "@/components/Showcase";
@@ -14,8 +14,8 @@ export default function Home() {
       <Manifesto />
       <Signature />
       <Showcase />
-      <Method />
-      <Invest />
+      {/* <Method /> */}
+      <Hire />
       <Contact />
       <FloatingCta />
     </main>

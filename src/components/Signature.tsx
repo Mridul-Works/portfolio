@@ -191,7 +191,7 @@ function ColorTile() {
           style={{ backgroundColor: m.pop, color: m.bg }}
           className="w-max rounded-full px-3 py-1 font-mono text-[8px] font-bold tracking-[0.2em] transition-colors duration-500"
         >
-          BOOK NOW
+          SHIP IT
         </span>
       </div>
       <span className="absolute right-4 top-3 font-mono text-[9px] tracking-[0.25em] text-white/40">
@@ -347,9 +347,9 @@ export default function Signature() {
             <span className="text-white/50">Go on — touch these.</span>
           </h2>
           <p className="mt-6 max-w-xl text-sm leading-relaxed text-white/60 sm:text-base">
-            Four ingredients go into every site I build. Instead of describing
-            them, each tile below simply <em>is</em> one. This is also your
-            preview of how your visitors will feel.
+            Six ingredients go into everything I build. Instead of listing
+            them on a résumé, each tile below simply <em>is</em> one. This is
+            also your preview of how your users will feel.
           </p>
         </Reveal>
 
@@ -374,7 +374,7 @@ export default function Signature() {
         <Reveal className="mt-14">
           <p className="max-w-xl text-sm leading-relaxed text-white/55">
             Every tile here runs at 60fps on a mid-range phone — the same
-            budget your visitors will be on. Next: what happens when these
+            budget your users will be on. Next: what happens when these
             ingredients meet a real brief.
           </p>
         </Reveal>

@@ -2,64 +2,65 @@ import Reveal from "./Reveal";
 import Stardust from "./Stardust";
 
 /**
- * The working rhythm, laid out like a shipping schedule. Clients don't
- * fear price as much as they fear fog — so this section removes every
- * bit of it: what happens, when, and what lands in their inbox weekly.
+ * The working rhythm, laid out like a shipping schedule. Teams don't
+ * fear a new hire's skills as much as they fear fog — so this section
+ * removes every bit of it: what joining me up actually looks like,
+ * week by week.
  */
 
 const STEPS = [
   {
-    when: "DAY 0",
-    name: "The call",
+    when: "DAY 1",
+    name: "The setup",
     detail:
-      "Twenty minutes. You talk about the brand, I ask the annoying-but-necessary questions. No deck, no pitch theatre.",
-  },
-  {
-    when: "DAY 2",
-    name: "The fixed quote",
-    detail:
-      "One number, in writing, within 48 hours. It doesn't change unless the scope does — no hourly mystery meat.",
+      "Repo cloned, env running, docs read — and a first PR before I log off. Small, real, and reviewable. No week-one warmup theatre.",
   },
   {
     when: "WEEK 1",
     name: "The first demo",
     detail:
-      "A real link you can click on your phone — not a moodboard, not a wireframe PDF. Direction locks early, surprises die early.",
+      "A real link the team can click — not a promise in a standup. Direction locks early, surprises die early.",
   },
   {
     when: "EVERY FRIDAY",
     name: "A new demo",
     detail:
-      "The site, further along, in your inbox before the weekend. You always know exactly where your money is.",
+      "Something showable, further along, before the weekend. The team always knows exactly where my work stands.",
   },
   {
-    when: "LAUNCH",
-    name: "The handover",
+    when: "EVERY PR",
+    name: "The paper trail",
     detail:
-      "Domain live, analytics wired, and everything — code, design, accounts — owned by you. Not rented from me.",
+      "Small diffs, honest descriptions, screenshots for anything visual. Review should be a pleasure, not archaeology.",
   },
   {
-    when: "+30 DAYS",
-    name: "The safety net",
+    when: "SHIP DAY",
+    name: "The polish pass",
     detail:
-      "A full month of fixes and polish after launch, free. If something wobbles, it's my Friday, not yours.",
+      "Lighthouse run, motion checked on a mid-range phone, edge cases hunted. 'Works on my machine' is not a definition of done.",
+  },
+  {
+    when: "AFTER",
+    name: "The ownership",
+    detail:
+      "I stay with what I ship — monitoring, fixes, docs for the next person. Code isn't done when it merges; it's done when it's boring.",
   },
 ];
 
 const INBOX = [
   {
     unread: true,
-    subject: "Demo 04 — checkout is live, tap it on your phone",
+    subject: "Demo 04 — checkout flow on staging, tap it on your phone",
     time: "FRI 5:47 PM",
   },
   {
     unread: true,
-    subject: "Demo 03 — motion pass done, the homepage breathes now",
+    subject: "Demo 03 — motion pass done, the dashboard breathes now",
     time: "LAST FRI",
   },
   {
     unread: false,
-    subject: "Demo 02 — first real pages (yes, already)",
+    subject: "Demo 02 — first real screens (yes, already)",
     time: "2 FRIDAYS AGO",
   },
   {
@@ -73,9 +74,9 @@ const PROMISES = [
   "LIGHTHOUSE 95+ ON EVERY BUILD — RUN IT YOURSELF",
   "SUB-SECOND FIRST LOAD, TESTED ON A MID-RANGE PHONE",
   "60FPS MOTION — THIS SITE IS THE DEMO",
-  "FIXED QUOTE, ZERO SURPRISE INVOICES",
-  "A CLICKABLE DEMO IN YOUR INBOX EVERY WEEK",
-  "30 DAYS OF POST-LAUNCH FIXES, FREE",
+  "PRS SMALL ENOUGH TO ACTUALLY REVIEW",
+  "A CLICKABLE DEMO FOR THE TEAM EVERY WEEK",
+  "DOCS WRITTEN WITHOUT BEING ASKED",
 ];
 
 export default function Method() {
@@ -98,9 +99,10 @@ export default function Method() {
             <span className="chrome-text">Just Fridays.</span>
           </h2>
           <p className="mt-6 max-w-xl text-sm leading-relaxed text-white/70 sm:text-base">
-            The most expensive part of most web projects is the silence
-            between updates. My process is built to make silence impossible —
-            here is your entire project, start to finish.
+            The most expensive part of a new hire is the fog — the weeks of
+            wondering what they&apos;re actually doing. My working rhythm is
+            built to make fog impossible. Here&apos;s what my first stretch on
+            your team looks like.
           </p>
         </Reveal>
 
@@ -129,7 +131,7 @@ export default function Method() {
         {/* the inbox, simulated — what "every Friday" actually looks like */}
         <Reveal className="mt-16">
           <p className="font-mono text-[10px] tracking-[0.25em] text-white/60">
-            YOUR INBOX, SIX WEEKS IN
+            YOUR TEAM&apos;S INBOX, SIX WEEKS IN
           </p>
           <div className="mt-4 overflow-hidden rounded-2xl border border-white/15 bg-white/5">
             <div className="flex items-center gap-1.5 border-b border-white/10 bg-white/5 px-4 py-3">
@@ -137,7 +139,7 @@ export default function Method() {
               <span className="h-2.5 w-2.5 rounded-full bg-white/15" />
               <span className="h-2.5 w-2.5 rounded-full bg-white/15" />
               <span className="ml-3 truncate font-mono text-[10px] text-white/40">
-                inbox — you@yourbrand.com
+                inbox — team@yourcompany.com
               </span>
             </div>
             {INBOX.map((mail) => (
@@ -184,8 +186,7 @@ export default function Method() {
             </div>
           </div>
           <p className="mt-2 font-mono text-[9px] tracking-[0.15em] text-white/45">
-            NO RENTED TESTIMONIALS — JUST TERMS. EVERY ONE GOES IN THE
-            CONTRACT.
+            NOT ASPIRATIONS — HABITS. EVERY ONE IS RUNNING ON THIS VERY PAGE.
           </p>
         </Reveal>
       </div>

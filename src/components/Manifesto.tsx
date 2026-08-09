@@ -4,19 +4,19 @@ import Sparkle from "./Sparkle";
 import Stardust from "./Stardust";
 
 /**
- * The opening argument. Before showing anything, the site names exactly
- * who it's for — people whose taste outgrew their template — and states
- * the five beliefs every build here runs on. Editorial, unhurried,
- * zero features listed. Taste recognises taste.
+ * The opening argument. Before showing anything, the site says who I am —
+ * a developer whose taste outgrew the templates — and states the five
+ * beliefs every build runs on. Editorial, unhurried, zero buzzwords
+ * listed. Taste recognises taste.
  */
 
-const AUDIENCE = [
-  "DESIGN STUDIOS",
-  "PHOTOGRAPHERS",
-  "ARCHITECTS",
-  "FASHION & BEAUTY",
-  "GALLERIES",
-  "FOUNDERS WITH TASTE",
+const CRAFT = [
+  "REACT / NEXT.JS",
+  "TYPESCRIPT",
+  "THREE.JS / WEBGL",
+  "MOTION DESIGN",
+  "DESIGN SYSTEMS",
+  "PERFORMANCE",
 ];
 
 const BELIEFS = [
@@ -42,13 +42,13 @@ const BELIEFS = [
     n: "04",
     title: "Templates are camouflage.",
     detail:
-      "A template makes you look like everyone who bought it. You didn't build a distinctive brand to dress it in one.",
+      "A template makes a product look like everyone who bought it. Distinctive work deserves better than borrowed clothes.",
   },
   {
     n: "05",
     title: "A website is a salesperson.",
     detail:
-      "The only one who works at 3am, never mumbles, and greets every client at their absolute best.",
+      "The only one who works at 3am, never mumbles, and greets every visitor at their absolute best.",
   },
 ];
 
@@ -63,21 +63,21 @@ export default function Manifesto() {
       <div className="relative mx-auto max-w-3xl px-6 py-24 sm:py-36">
         <Reveal>
           <p className="font-mono text-[11px] tracking-[0.3em] text-zinc-500">
-            FIRST — WHO THIS IS FOR
+            FIRST — WHO I AM
           </p>
           <h2 className="relative mt-6 font-display text-3xl font-bold leading-tight tracking-tight sm:text-5xl">
             <Sparkle className="-top-5 right-[12%] h-6 w-6 text-cobalt sm:h-8 sm:w-8" delay={0.8} />
-            Your work is beautiful.
+            Plenty of developers can build it.
             <br />
             <span className="text-zinc-500">
-              Your website introduces it with a shrug.
+              Fewer can make it feel like this.
             </span>
           </h2>
           <p className="mt-6 max-w-xl text-base leading-relaxed text-zinc-600 sm:text-lg">
-            I build websites for people whose taste outgrew their template —
-            the ones who notice a bad typeface from across the room and feel
-            a slow page like a wet handshake. If that&apos;s you, keep
-            scrolling. This whole site is the{" "}
+            I&apos;m Mridul — a frontend developer who notices a bad typeface
+            from across the room and feels a slow page like a wet handshake.
+            I&apos;m looking for a team that sweats the same details. If
+            that&apos;s yours, keep scrolling. This whole site is the{" "}
             <span className="font-script text-[1.15em] italic text-cobalt">
               audition
             </span>
@@ -87,7 +87,7 @@ export default function Manifesto() {
 
         <Reveal delay={100} className="mt-10">
           <div className="flex flex-wrap gap-2">
-            {AUDIENCE.map((who) => (
+            {CRAFT.map((who) => (
               <span
                 key={who}
                 className="rounded-full border border-zinc-300 px-4 py-2 font-mono text-[10px] tracking-[0.2em] text-zinc-600 transition-colors hover:border-cobalt hover:bg-cobalt hover:text-white"
@@ -139,9 +139,8 @@ export default function Manifesto() {
             <CompareSlider />
           </div>
           <p className="mt-4 text-sm leading-relaxed text-zinc-500">
-            Same brand, same budget meeting. One of these gets remembered.
-            Easy to write, harder to prove — the next section is proof you
-            can touch.
+            Same brief, same deadline. One of these gets remembered. Easy to
+            write, harder to prove — the next section is proof you can touch.
           </p>
         </Reveal>
       </div>

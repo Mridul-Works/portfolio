@@ -3,9 +3,10 @@
 import { useEffect, useState } from "react";
 
 /**
- * The quiet closer: a booking pill that appears once the hero is gone and
- * gets out of the way when the hire/contact sections (which already sell)
- * are on screen. One job — never let a convinced visitor hunt for the CTA.
+ * The quiet closer: an open-to-work pill that appears once the hero is
+ * gone and gets out of the way when the hire/contact sections (which
+ * already sell) are on screen. One job — never let a convinced recruiter
+ * hunt for the CTA.
  */
 export default function FloatingCta() {
   const [pastHero, setPastHero] = useState(false);
@@ -17,7 +18,7 @@ export default function FloatingCta() {
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
 
-    const targets = ["invest", "contact"]
+    const targets = ["hire", "contact"]
       .map((id) => document.getElementById(id))
       .filter((el): el is HTMLElement => el !== null);
     const visible = new Set<Element>();
@@ -44,7 +45,7 @@ export default function FloatingCta() {
 
   return (
     <a
-      href="#invest"
+      href="#hire"
       aria-hidden={!shown}
       tabIndex={shown ? 0 : -1}
       className={`fixed bottom-5 right-5 z-50 inline-flex items-center gap-2.5 rounded-full border border-white/15 bg-cobalt px-5 py-3 font-mono text-[10px] font-bold tracking-[0.15em] text-white shadow-[0_12px_35px_-12px_rgba(4,6,60,0.9)] transition-all duration-500 hover:bg-cobalt-deep sm:bottom-8 sm:right-8 ${
@@ -57,8 +58,8 @@ export default function FloatingCta() {
         <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-60 motion-reduce:animate-none" />
         <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
       </span>
-      <span className="hidden sm:inline">SLOTS OPEN — </span>
-      START A PROJECT
+      <span className="hidden sm:inline">OPEN TO WORK — </span>
+      HIRE ME
     </a>
   );
 }

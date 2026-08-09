@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 /**
- * Belief 04, demonstrated: a drag handle between the ₹5K template and
+ * Belief 04, demonstrated: a drag handle between a generic template and
  * the site that could only belong to one brand. The argument makes
  * itself the moment the visitor pulls the handle — no copy needed.
  * The control is a full-bleed invisible range input, so it works with
@@ -25,7 +25,7 @@ export default function CompareSlider() {
             EXPLORE →
           </span>
           <p className="absolute bottom-3 right-4 font-mono text-[9px] tracking-[0.25em] text-white/60">
-            YOURS
+            WHAT I BUILD
           </p>
         </div>
 
@@ -41,7 +41,7 @@ export default function CompareSlider() {
             Learn More
           </span>
           <p className="absolute bottom-3 left-4 font-mono text-[9px] tracking-[0.25em] text-zinc-400">
-            THE ₹5K TEMPLATE
+            THE TEMPLATE
           </p>
         </div>
 

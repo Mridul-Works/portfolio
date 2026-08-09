@@ -5,7 +5,7 @@ import Sparkle from "./Sparkle";
 import Stardust from "./Stardust";
 
 const NAV = [
-  ["FOR YOU", "#manifesto"],
+  ["ABOUT", "#manifesto"],
   ["SIGNATURE", "#signature"],
   ["WORK", "#work"],
   ["METHOD", "#method"],
@@ -57,10 +57,10 @@ export default function Hero() {
             </a>
           ))}
           <a
-            href="#invest"
+            href="#hire"
             className="whitespace-nowrap rounded-full bg-accent px-4 py-2 font-bold tracking-[0.15em] text-ink transition-transform hover:scale-[1.04]"
           >
-            START A PROJECT
+            HIRE ME
           </a>
         </nav>
       </header>
@@ -74,7 +74,7 @@ export default function Hero() {
       {/* caption riding just below the particle word */}
       <div className="pointer-events-none absolute inset-x-0 top-[58%] z-10 text-center">
         <p className="font-mono text-[10px] tracking-[0.42em] text-white/50">
-          WEBSITES FOR BRANDS WITH TASTE<span className="text-accent">©</span>
+          CREATIVE FRONTEND DEVELOPER<span className="text-accent">©</span>
           2026
         </p>
       </div>
@@ -83,14 +83,14 @@ export default function Hero() {
       <div className="absolute inset-x-0 bottom-0 z-10 flex items-end justify-between gap-8 px-6 pb-8 sm:px-10 sm:pb-10">
         <div className="max-w-md">
           <a
-            href="#invest"
+            href="#hire"
             className="group inline-flex items-center gap-2.5 font-mono text-[10px] tracking-[0.25em] text-white/60 transition-colors hover:text-white"
           >
             <span className="relative flex h-2 w-2">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-60 motion-reduce:animate-none" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
             </span>
-            NOW BOOKING — 10 CLIENT SLOTS THIS MONTH
+            OPEN TO WORK — FRONTEND / CREATIVE DEVELOPER ROLES
             <span className="opacity-0 transition-opacity group-hover:opacity-100">
               →
             </span>
@@ -100,9 +100,9 @@ export default function Hero() {
             <Sparkle className="-left-4 -top-3 h-5 w-5" delay={0.9} />
             <Sparkle className="-right-2 bottom-1 h-4 w-4 sm:-right-6" delay={2.3} />
             <p className="chrome-text font-display text-[clamp(1.35rem,2.6vw,2rem)] font-bold leading-tight tracking-tight">
-              Websites people remember —
+              Interfaces people remember —
               <br />
-              built for brands with{" "}
+              built with code, motion and{" "}
               <span className="font-script text-[1.18em] italic">taste</span>
               <span className="text-accent">.</span>
             </p>

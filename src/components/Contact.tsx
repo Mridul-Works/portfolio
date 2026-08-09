@@ -6,12 +6,12 @@ import MarqueeBand from "./MarqueeBand";
 import Sparkle from "./Sparkle";
 import Stardust from "./Stardust";
 
-// same brief as the invest section — clients land here ready to talk,
-// the email arrives pre-filled with the questions that scope a project
+// same brief as the hire section — teams land here ready to talk,
+// the email arrives pre-filled with the questions that scope a role
 const MAILTO = `mailto:hello@mridul.dev?subject=${encodeURIComponent(
-  "New project — let's scope it"
+  "Opportunity — let's talk"
 )}&body=${encodeURIComponent(
-  `What I'm building:\n\nWho it's for:\n\nDeadline (if any):\n\nBudget ballpark (rough is fine):\n\nAnything existing (links welcome):\n`
+  `Company / team:\n\nThe role:\n\nYour stack:\n\nWhat I'd build first:\n\nNext step (call / task / coffee):\n`
 )}`;
 
 function Eye({
@@ -119,11 +119,11 @@ export default function Contact() {
       <div className="relative mx-auto flex min-h-svh max-w-5xl flex-col items-center justify-center px-6 py-24 text-center">
         <p className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-4 py-2 font-mono text-[10px] tracking-[0.25em] text-white/70">
           <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-accent" />
-          NOW BOOKING — LIMITED CLIENT SLOTS THIS MONTH
+          OPEN TO WORK — AVAILABLE NOW
         </p>
 
         <p className="mt-6 font-mono text-[11px] tracking-[0.3em] text-white/60">
-          GOT AN IDEA? — LET&apos;S BUILD IT
+          GOT A TEAM? — I&apos;D LIKE TO JOIN IT
         </p>
 
         <h2
@@ -154,7 +154,7 @@ export default function Contact() {
             href={MAILTO}
             className="inline-flex items-center gap-3 rounded-full bg-accent px-8 py-4 font-mono text-xs font-bold tracking-[0.15em] text-ink shadow-[0_10px_30px_-10px_rgba(217,255,61,0.7)] transition-transform duration-300 hover:scale-[1.03]"
           >
-            START A PROJECT
+            GET IN TOUCH
             <span aria-hidden="true">→</span>
           </a>
         </Magnetic>
