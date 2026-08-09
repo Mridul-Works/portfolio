@@ -19,16 +19,70 @@ const TIMELINE = [
   // { when: "…", role: "…", detail: "…" },
 ];
 
-// the reference letter: written as a draft mid-edit — strikethroughs show
-// weaker words being upgraded to the true ones. Swap wording with the real
-// person's blessing before this goes live.
+// the reference letters: written as drafts mid-edit — strikethroughs show
+// weaker words losing to the true ones, highlighter marks the upgrades.
+// Swap wording with the real people's blessing before this goes live.
 function Strike({ children }: { children: React.ReactNode }) {
   return (
-    <s className="mx-0.5 text-white/30 decoration-white/40 decoration-1">
+    <s className="mx-0.5 text-zinc-400 decoration-zinc-400/80 decoration-1">
       {children}
     </s>
   );
 }
+
+function Mark({ children }: { children: React.ReactNode }) {
+  return (
+    <mark className="rounded-sm bg-accent/80 px-1 text-ink">{children}</mark>
+  );
+}
+
+const DRAFTS = [
+  {
+    to: "Whoever hires Mridul next",
+    from: "Marketing Team — Masters' Union",
+    subject: "re: reference (honest version)",
+    saved: "6:41 PM",
+    tilt: "-rotate-1",
+    body: (
+      <>
+        <p>To whoever gets to work with him next,</p>
+        <p className="mt-4">
+          Mridul built our campaign pages <Strike>on time</Strike>{" "}
+          <Mark>before the ads went live</Mark>. Every single time.
+        </p>
+        <p className="mt-4">
+          We&apos;d keep him if we could
+          <Strike>, so we&apos;re not sending this</Strike>.
+        </p>
+      </>
+    ),
+  },
+  {
+    to: "Whoever's asking about him",
+    from: "Campaign Lead — Masters' Union",
+    subject: "re: is he any good?",
+    saved: "7:12 AM",
+    tilt: "rotate-1",
+    body: (
+      <>
+        <p>Short answer —</p>
+        <p className="mt-4">
+          Brief him at 6pm and it&apos;s live by morning, looking like a{" "}
+          <Strike>decent</Strike> <Strike>good</Strike>{" "}
+          <Mark>full design team</Mark> spent a week on it.
+        </p>
+        <p className="mt-4">
+          Hire him <Strike>if you must</Strike>{" "}
+          <Mark>before someone else does</Mark>
+          <span
+            aria-hidden="true"
+            className="ml-1 inline-block h-4 w-0.5 animate-pulse bg-cobalt align-middle motion-reduce:animate-none"
+          />
+        </p>
+      </>
+    ),
+  },
+];
 
 export default function Record() {
   return (
@@ -78,58 +132,60 @@ export default function Record() {
         {/* borrowed voices — other people saying it */}
         <Reveal delay={140} className="mt-14">
           <p className="font-mono text-[10px] tracking-[0.25em] text-white/60">
-            BORROWED VOICES — A REFERENCE LETTER, STILL IN DRAFTS
+            BORROWED VOICES — REFERENCE LETTERS, STILL IN DRAFTS
           </p>
 
-          {/* the compose window — caught mid-edit, honesty winning each pass */}
-          <div className="mt-5 overflow-hidden rounded-2xl border border-white/15 bg-white/5">
-            <div className="flex items-center justify-between border-b border-white/10 bg-white/5 px-5 py-3">
-              <p className="font-mono text-[10px] tracking-[0.15em] text-white/50">
-                NEW MESSAGE — DRAFT
-              </p>
-              <p className="font-mono text-[9px] tracking-[0.15em] text-white/35">
-                AUTOSAVED 6:41 PM
-              </p>
-            </div>
+          {/* two compose windows on the desk — caught mid-edit, honesty
+              winning each pass. Paper-white so they read as real drafts. */}
+          <div className="mt-8 grid items-start gap-6 lg:grid-cols-2">
+            {DRAFTS.map((draft) => (
+              <div
+                key={draft.subject}
+                className={`overflow-hidden rounded-xl bg-paper text-zinc-800 shadow-[0_24px_60px_-24px_rgba(4,6,60,0.9)] transition-transform duration-500 hover:rotate-0 ${draft.tilt}`}
+              >
+                {/* gmail-style title bar */}
+                <div className="flex items-center justify-between bg-zinc-900 px-4 py-2.5">
+                  <p className="font-mono text-[10px] tracking-[0.15em] text-white/80">
+                    NEW MESSAGE — DRAFT
+                  </p>
+                  <p
+                    aria-hidden="true"
+                    className="font-mono text-xs tracking-widest text-white/50"
+                  >
+                    — ✕
+                  </p>
+                </div>
 
-            <div className="border-b border-white/10 px-5 py-3 font-mono text-[10px] tracking-[0.15em] text-white/45 sm:px-6">
-              <p>
-                TO: <span className="text-white/70">WHOEVER HIRES MRIDUL NEXT</span>
-              </p>
-              <p className="mt-1.5">
-                FROM:{" "}
-                <span className="text-white/70">
-                  MARKETING TEAM — MASTERS&apos; UNION
-                </span>
-              </p>
-              <p className="mt-1.5">
-                SUBJECT: <span className="text-accent">re: reference (honest version)</span>
-              </p>
-            </div>
+                {/* address fields */}
+                <div className="px-5 pt-3 font-mono text-[10px] tracking-[0.12em]">
+                  <p className="border-b border-zinc-200 py-2 text-zinc-400">
+                    To: <span className="text-zinc-700">{draft.to}</span>
+                  </p>
+                  <p className="border-b border-zinc-200 py-2 text-zinc-400">
+                    From: <span className="text-zinc-700">{draft.from}</span>
+                  </p>
+                  <p className="border-b border-zinc-200 py-2 text-zinc-400">
+                    Subject:{" "}
+                    <span className="font-bold text-zinc-800">{draft.subject}</span>
+                  </p>
+                </div>
 
-            <div className="max-w-2xl px-5 py-6 text-[15px] leading-loose text-white/85 sm:px-6 sm:text-base">
-              <p>To whoever gets to work with him next,</p>
-              <p className="">
-                Mridul built our campaign pages{" "}
-                <Strike>on time</Strike>{" "}
-                <span className="text-accent">before the ads went live</span>.
-                Every single time.
-              </p>
-              <p className="">
-                Brief him at 6pm and it&apos;s live by morning, looking like a{" "}
-                <Strike>decent</Strike> <Strike>good</Strike>{" "}
-                <span className="text-accent">full design team</span> spent a
-                week on it.
-              </p>
-              <p className="">
-                We&apos;d keep him if we could
-                <Strike>, so we&apos;re not sending this</Strike>
-                <span
-                  aria-hidden="true"
-                  className="ml-1 inline-block h-4 w-0.5 animate-pulse bg-accent align-middle motion-reduce:animate-none"
-                />
-              </p>
-            </div>
+                {/* the letter, mid-edit */}
+                <div className="px-5 py-5 text-[15px] leading-relaxed text-zinc-700">
+                  {draft.body}
+                </div>
+
+                {/* footer — the send button nobody presses */}
+                <div className="flex items-center justify-between border-t border-zinc-200 px-5 py-3.5">
+                  <span className="rounded-full bg-cobalt px-5 py-2 font-mono text-[10px] font-bold tracking-[0.15em] text-white opacity-90">
+                    SEND
+                  </span>
+                  <p className="font-mono text-[9px] tracking-[0.15em] text-zinc-400">
+                    SAVED {draft.saved} · NEVER SENT, ALWAYS TRUE
+                  </p>
+                </div>
+              </div>
+            ))}
           </div>
           <p className="mt-4 font-mono text-[9px] tracking-[0.15em] text-white/45">
             REFERENCES WITH NAMES AND NUMBERS — AVAILABLE THE MOMENT YOU ASK.
