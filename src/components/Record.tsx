@@ -19,19 +19,16 @@ const TIMELINE = [
   // { when: "…", role: "…", detail: "…" },
 ];
 
-// drafts — swap in the real people's own words before this goes live
-const VOICES = [
-  {
-    quote:
-      "The ads go live on schedule whether the page exists or not. With Mridul, the page always exists  and it's usually the part of the campaign people compliment.",
-    who: "MARKETING TEAM — MASTERS' UNION",
-  },
-  {
-    quote:
-      "Brief him at 6pm and it's live by morning, looking like a design team spent a week on it.",
-    who: "CAMPAIGN LEAD — MASTERS' UNION",
-  },
-];
+// the reference letter: written as a draft mid-edit — strikethroughs show
+// weaker words being upgraded to the true ones. Swap wording with the real
+// person's blessing before this goes live.
+function Strike({ children }: { children: React.ReactNode }) {
+  return (
+    <s className="mx-0.5 text-white/30 decoration-white/40 decoration-1">
+      {children}
+    </s>
+  );
+}
 
 export default function Record() {
   return (
@@ -81,28 +78,58 @@ export default function Record() {
         {/* borrowed voices — other people saying it */}
         <Reveal delay={140} className="mt-14">
           <p className="font-mono text-[10px] tracking-[0.25em] text-white/60">
-            BORROWED VOICES — THE PEOPLE I SHIP FOR
+            BORROWED VOICES — A REFERENCE LETTER, STILL IN DRAFTS
           </p>
-          <div className="mt-5 grid gap-4 sm:grid-cols-2">
-            {VOICES.map((v) => (
-              <figure
-                key={v.who}
-                className="flex flex-col justify-between rounded-2xl border border-white/15 bg-white/5 p-6 sm:p-7"
-              >
-                <blockquote className="text-sm leading-relaxed text-white/85 sm:text-base">
-                  <span
-                    aria-hidden="true"
-                    className="font-script block text-3xl italic leading-none text-accent"
-                  >
-                    &ldquo;
-                  </span>
-                  {v.quote}
-                </blockquote>
-                <figcaption className="mt-5 border-t border-white/10 pt-4 font-mono text-[9px] tracking-[0.25em] text-white/50">
-                  {v.who}
-                </figcaption>
-              </figure>
-            ))}
+
+          {/* the compose window — caught mid-edit, honesty winning each pass */}
+          <div className="mt-5 overflow-hidden rounded-2xl border border-white/15 bg-white/5">
+            <div className="flex items-center justify-between border-b border-white/10 bg-white/5 px-5 py-3">
+              <p className="font-mono text-[10px] tracking-[0.15em] text-white/50">
+                NEW MESSAGE — DRAFT
+              </p>
+              <p className="font-mono text-[9px] tracking-[0.15em] text-white/35">
+                AUTOSAVED 6:41 PM
+              </p>
+            </div>
+
+            <div className="border-b border-white/10 px-5 py-3 font-mono text-[10px] tracking-[0.15em] text-white/45 sm:px-6">
+              <p>
+                TO: <span className="text-white/70">WHOEVER HIRES MRIDUL NEXT</span>
+              </p>
+              <p className="mt-1.5">
+                FROM:{" "}
+                <span className="text-white/70">
+                  MARKETING TEAM — MASTERS&apos; UNION
+                </span>
+              </p>
+              <p className="mt-1.5">
+                SUBJECT: <span className="text-accent">re: reference (honest version)</span>
+              </p>
+            </div>
+
+            <div className="max-w-2xl px-5 py-6 text-[15px] leading-loose text-white/85 sm:px-6 sm:text-base">
+              <p>To whoever gets to work with him next,</p>
+              <p className="">
+                Mridul built our campaign pages{" "}
+                <Strike>on time</Strike>{" "}
+                <span className="text-accent">before the ads went live</span>.
+                Every single time.
+              </p>
+              <p className="">
+                Brief him at 6pm and it&apos;s live by morning, looking like a{" "}
+                <Strike>decent</Strike> <Strike>good</Strike>{" "}
+                <span className="text-accent">full design team</span> spent a
+                week on it.
+              </p>
+              <p className="">
+                We&apos;d keep him if we could
+                <Strike>, so we&apos;re not sending this</Strike>
+                <span
+                  aria-hidden="true"
+                  className="ml-1 inline-block h-4 w-0.5 animate-pulse bg-accent align-middle motion-reduce:animate-none"
+                />
+              </p>
+            </div>
           </div>
           <p className="mt-4 font-mono text-[9px] tracking-[0.15em] text-white/45">
             REFERENCES WITH NAMES AND NUMBERS — AVAILABLE THE MOMENT YOU ASK.
